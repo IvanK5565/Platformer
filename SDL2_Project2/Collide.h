@@ -38,7 +38,6 @@ namespace myGame {
 	class Collide {
 	public:
 		int x, y;
-		static const int SIDE = 32;
 		Collide(int x, int y) : x(x), y(y) {}
 		void setPos(int, int);
 		virtual ~Collide() {}
@@ -51,6 +50,7 @@ namespace myGame {
 		//    ###
 	class RightTriangle : public Collide {
 	public:
+		static const int SIDE = 32;
 		RightTriangle(int _x, int _y) : Collide(_x, _y) {}
 		virtual ~RightTriangle() {}
 		virtual CollisionInfo checkCollision(const Square&) override;
@@ -62,6 +62,7 @@ namespace myGame {
 		//    ###
 	class LeftTriangle : public Collide {
 	public:
+		static const int SIDE = 32;
 		LeftTriangle(int _x, int _y) : Collide(_x, _y) {}
 		virtual ~LeftTriangle() {}
 		virtual CollisionInfo checkCollision(const Square&) override;

@@ -21,9 +21,6 @@ namespace myGame {
 			return true;
 		}
 	};
-	struct Test {
-
-	};
 	struct StateData {
 		int count;
 		string place;
