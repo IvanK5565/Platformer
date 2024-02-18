@@ -18,8 +18,8 @@ namespace myGame {
 		rect.y += yDist * delay / 1000.f;
 
 		rect.y = std::max(0, rect.y);
-		rect.y = std::min(zone.h, rect.y);
-		rect.x = std::min(zone.w, rect.x);
+		rect.y = std::min(zone.h, rect.y+rect.h)-rect.h;
+		rect.x = std::min(zone.w, rect.x+rect.w)-rect.w;
 		rect.x = std::max(0, rect.x);
 	}
 

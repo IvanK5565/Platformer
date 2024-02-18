@@ -17,7 +17,6 @@ namespace myGame {
 	class MainMenu : public Drawable {
 	public:
 		virtual ~MainMenu() {}
-		virtual void handleEvent(SDL_Event& e) override;
 		virtual void render(Camera&, SDL_Renderer*) override;
 		virtual void act(Uint32) override;
 		virtual SDL_Rect getRect() override;
@@ -27,7 +26,7 @@ namespace myGame {
 	class Map : public Drawable {
 		int width, height;
 		int** tileNums;
-		vector<Collide*> collides;
+		vector<Collide*> walls;
 		vector<SDL_Texture*> tiles;
 		vector<Entity*> enemies;
 		Player* player;
@@ -43,9 +42,9 @@ namespace myGame {
 			}
 			delete[] tileNums;
 
-			for (size_t i = 0; i < collides.size(); i++)
+			for (size_t i = 0; i < walls.size(); i++)
 			{
-				delete collides[i];
+				delete walls[i];
 			}
 			for (size_t i = 0; i < tiles.size(); i++)
 			{
@@ -54,7 +53,6 @@ namespace myGame {
 
 			delete player;
 		}
-		virtual void handleEvent(SDL_Event& e) override;
 		virtual void render(Camera&, SDL_Renderer*) override;
 		virtual void act(Uint32) override;
 		virtual SDL_Rect getRect() override;

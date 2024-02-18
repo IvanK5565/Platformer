@@ -42,6 +42,7 @@ namespace myGame {
 		void setPos(int, int);
 		virtual ~Collide() {}
 		virtual CollisionInfo checkCollision(const Square&) = 0;
+		virtual CollisionInfo checkCollision(const int _x, const int _y) = 0;
 		virtual void drawBorder(SDL_Renderer*, Camera&) = 0;
 		virtual CollideType getType() = 0;
 	};
@@ -54,6 +55,7 @@ namespace myGame {
 		RightTriangle(int _x, int _y) : Collide(_x, _y) {}
 		virtual ~RightTriangle() {}
 		virtual CollisionInfo checkCollision(const Square&) override;
+		virtual CollisionInfo checkCollision(const int _x, const int _y) override;
 		virtual void drawBorder(SDL_Renderer*, Camera&) override;
 		virtual CollideType getType() override;
 	};
@@ -66,6 +68,7 @@ namespace myGame {
 		LeftTriangle(int _x, int _y) : Collide(_x, _y) {}
 		virtual ~LeftTriangle() {}
 		virtual CollisionInfo checkCollision(const Square&) override;
+		virtual CollisionInfo checkCollision(const int _x, const int _y) override;
 		virtual void drawBorder(SDL_Renderer*, Camera&) override;
 		virtual CollideType getType() override;
 	};
@@ -77,6 +80,7 @@ namespace myGame {
 		Square(SDL_Rect rect) : Collide(rect.x, rect.y), width(rect.w), height(rect.h) {}
 		virtual ~Square() {}
 		virtual CollisionInfo checkCollision(const Square&) override;
+		virtual CollisionInfo checkCollision(const int _x, const int _y) override;
 		virtual void drawBorder(SDL_Renderer*, Camera&) override;
 		virtual CollideType getType() override;
 		SDL_Rect getRect() {

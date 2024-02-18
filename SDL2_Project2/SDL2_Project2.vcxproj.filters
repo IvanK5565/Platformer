@@ -30,7 +30,7 @@
     <ClCompile Include="Collide.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Entities.cpp">
+    <ClCompile Include="Entity.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
@@ -88,10 +88,5 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="data.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="SDL2_Project2.rc">
-      <Filter>Файлы ресурсов</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

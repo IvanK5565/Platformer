@@ -97,7 +97,7 @@ namespace myGame {
 	struct Data {
 		TilesData tiles;
 		EntityData player;
-		EntityData enemy;
+		EntityData bandit[2];
 		MapsData maps;
 		string backgroundPath;
 		bool set(TiXmlDocument& d) {
@@ -112,6 +112,14 @@ namespace myGame {
 			if (e == nullptr) return false;
 			if (!player.set(e)) return false;
 
+			e = data->FirstChildElement("bandit1");
+			if (e == nullptr) return false;
+			if (!bandit[0].set(e)) return false;
+
+			e = data->FirstChildElement("bandit2");
+			if (e == nullptr) return false;
+			if (!bandit[1].set(e)) return false;
+
 			e = data->FirstChildElement("maps");
 			if (e == nullptr) return false;
 			if (!maps.set(e)) return false;
@@ -120,6 +128,8 @@ namespace myGame {
 			if (e == nullptr) return false;
 			backgroundPath = e->Attribute("path");
 			if (backgroundPath.empty()) return false;
+
+			return true;
 		}
 	};
 }

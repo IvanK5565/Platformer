@@ -3,12 +3,28 @@
 	<tiles type="png" count="96" width="32" height="32" place="./assets/images/tiles/"/>
     <player type="png" width="80" height="40" hitW="20" hitH="30" attackW="40" attackH="20">
         <attack place="./assets/images/player/attack/" count="14"/>
-        <death  place="./assets/images/player/death/" count="8"/>
-        <hurt  place="./assets/images/player/hurt/" count="3"/>
-        <idle  place="./assets/images/player/idle/" count="3"/>
-        <jump  place="./assets/images/player/jump/" count="3"/>
-        <run  place="./assets/images/player/run/" count="8"/>
+        <death  place="./assets/images/player/death/"  count="8"/>
+        <hurt   place="./assets/images/player/hurt/"   count="3"/>
+        <idle   place="./assets/images/player/idle/"   count="3"/>
+        <jump   place="./assets/images/player/jump/"   count="3"/>
+        <run    place="./assets/images/player/run/"    count="8"/>
     </player>
+    <bandit1 type="png" width="48" height="48" hitW="20" hitH="30" attackW="40" attackH="20">
+        <attack place="./assets/images/bandit1/attack/" count="8"/>
+        <death  place="./assets/images/bandit1/death/"  count="9"/>
+        <hurt   place="./assets/images/bandit1/hurt/"   count="2"/>
+        <idle   place="./assets/images/bandit1/idle/"   count="4"/>
+        <jump   place="./assets/images/bandit1/jump/"   count="1"/>
+        <run    place="./assets/images/bandit1/run/"    count="8"/>
+    </bandit1>
+    <bandit2 type="png" width="48" height="48" hitW="20" hitH="30" attackW="40" attackH="20">
+        <attack place="./assets/images/bandit2/attack/" count="8"/>
+        <death  place="./assets/images/bandit2/death/"  count="9"/>
+        <hurt   place="./assets/images/bandit2/hurt/"   count="2"/>
+        <idle   place="./assets/images/bandit2/idle/"   count="4"/>
+        <jump   place="./assets/images/bandit2/jump/"   count="1"/>
+        <run    place="./assets/images/bandit2/run/"    count="8"/>
+    </bandit2>
     <maps type="tmx" count="1" place="./assets/maps/"/>
     <background path="./assets/images/background.png"/>
 </data>

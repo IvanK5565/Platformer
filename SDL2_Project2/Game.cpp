@@ -16,7 +16,7 @@ namespace myGame {
 			printf("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
 			_quit = true;
 		}
-		window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, GAME_WIDTH, GAME_HEIGHT, SDL_WINDOW_SHOWN);
+		window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, GAME_WIDTH, GAME_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_BORDERLESS);
 		if (window == NULL)
 		{
 			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
@@ -43,7 +43,7 @@ namespace myGame {
 		font = TTF_OpenFont(fontPath.c_str(), 28);
 		if (font == NULL)
 		{
-			printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
+			printf("Failed to load font! SDL_ttf Error: %s\n", TTF_GetError());
 			_quit = true;
 		}
 		SDL_Surface* textSurface = TTF_RenderText_Solid(font, "***LOADING***", { 0,0,0 });
@@ -65,16 +65,18 @@ namespace myGame {
 
 		TiXmlDocument doc("data.xml");
 		doc.LoadFile();
-		if (data.set(doc)) {
-			printf("Error to load data! Error: %s\n", getError());
+		if (!data.set(doc)) {
+			printf("Error to load data! Error: %s\n", getError().c_str());
 			_quit = true;
 		}
 
 		background = loadTexture(renderer, data.backgroundPath);
 		if (background == NULL) {
-			printf("Background load failed! Error: %s\n", getError());
+			printf("Background load failed! Error: %s\n", getError().c_str());
 			_quit = true;
 		}
+
+		
 	}
 	bool Game::loadMainMenu()
 	{
@@ -105,7 +107,6 @@ namespace myGame {
 			case SDLK_RIGHT: camera.move(Direction::Right, screen->getRect()); break;
 			}
 		}
-		screen->handleEvent(e);
 	}
 	void Game::render() {
 		SDL_Texture* rawView = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, camera.rect.w, camera.rect.h);

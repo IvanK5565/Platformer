@@ -2,6 +2,7 @@
 #include "Game.h"
 #include <tinyxml.h>
 #include <SDL.h>
+#include <SDL_thread.h>
 
 using namespace myGame;
 
@@ -30,8 +31,22 @@ int main(int argc, const int** args) {
 			{
 				quit = true;
 			}
+			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+				quit = true;
+			}
 			if (e.type == SDL_MOUSEBUTTONDOWN && e.key.repeat == 0) {
+				Uint32 click = SDL_GetMouseState(NULL, NULL);
+
 				std::cout << "mouse\n";
+				if (click & 1) {
+					std::cout << "leftButton\n";
+				}
+				if (click & 2) {
+					std::cout << "middleButton\n";
+				}
+				if (click & 4) {
+					std::cout << "rightButton\n";
+				}
 			}
 			//Handle input
 			game.handleEvent(e);
@@ -39,11 +54,9 @@ int main(int argc, const int** args) {
 
 		Uint32 newTicks = SDL_GetTicks();
 		delay += newTicks - oldTicks;
-
 		if (delay >= 10) {
 			game.act(delay);
-			//game.act(10);
-			delay -= 10;
+			delay = delay % 10;
 			game.render();
 		}
 		oldTicks = newTicks;

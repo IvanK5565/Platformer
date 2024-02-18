@@ -8,8 +8,7 @@
 namespace myGame {
 	class Game {
 	private:
-		const string levelFolder = "C:\\Users\\UserOne\\Desktop\\";
-		const string fontPath = "C:\\Users\\UserOne\\Desktop\\monogram.ttf";
+		const string fontPath = "./assets/fonts/monogram.ttf";
 		SDL_Window* window;
 		SDL_Renderer* renderer;
 		TTF_Font* font;

@@ -1,8 +1,5 @@
 #include "Screens.h"
 namespace myGame {
-	void MainMenu::handleEvent(SDL_Event& e)
-	{
-	}
 	void MainMenu::render(Camera& camera, SDL_Renderer* renderer) {
 
 	}
@@ -42,10 +39,6 @@ namespace myGame {
 			loadTextures(renderer, data);
 		}
 	}
-	void Map::handleEvent(SDL_Event& e)
-	{
-		player->handleEvent(e);
-	}
 	void Map::render(Camera& camera, SDL_Renderer* renderer) {
 		SDL_Rect pos = { 0,0,32,32 };
 		for (size_t i = 0; i < height; i++)
@@ -64,18 +57,19 @@ namespace myGame {
 				}
 			}
 		}
-		pos.x = 0;
-		pos.y = 0;
-		SDL_RenderCopy(renderer, tiles[0], NULL, &pos);
 
 #ifdef DEBUG
-		for (Collide* hitBox : collides)
+		for (Collide* hitBox : walls)
 		{
 			hitBox->drawBorder(renderer, camera);
 		}
 #endif // DEBUG
 
 		player->render(camera, renderer);
+
+		for (Entity* enemy : enemies) {
+			enemy->render(camera, renderer);
+		}
 	}
 
 	void Map::act(Uint32 delay)
@@ -157,23 +151,23 @@ namespace myGame {
 				if (element->QueryIntAttribute("width", &w) == TIXML_NO_ATTRIBUTE) return false;
 				if (element->QueryIntAttribute("height", &h) == TIXML_NO_ATTRIBUTE) return false;
 
-				collides.push_back(new Square(x, y, w, h));
+				walls.push_back(new Square(x, y, w, h));
 			}
 			else if (type == "triangle")
 			{
 				string name = element->Attribute("name");
 				if (name == "right")
-					collides.push_back(new RightTriangle(x, y - Collide::SIDE));
+					walls.push_back(new RightTriangle(x, y - RightTriangle::SIDE));
 				else
-					collides.push_back(new LeftTriangle(x, y));
+					walls.push_back(new LeftTriangle(x, y));
 
 			}
 			else if (type == "playerSpawn")
 			{
-				player = new Player(x, y, &data->player, collides, enemies, r);
+				player = new Player(x, y, &data->player, walls, enemies, r);
 			}
-			else {
-
+			else if (type == "enemy")  {
+				enemies.push_back(new Enemy(x, y, &data->bandit[rand() % 2], walls, player, r));
 			}
 			element = element->NextSiblingElement("object");
 		}

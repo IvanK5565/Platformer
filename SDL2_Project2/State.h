@@ -25,22 +25,21 @@ namespace myGame {
 		virtual void reset();
 		void render(Camera& camera, SDL_Renderer* renderer);
 
-		virtual void handleEvent(SDL_Event&) = 0;
 		virtual ~State();
 	};
-
+	//Player States
 	class IdleState : public State {
 	public:
 		IdleState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
-		virtual void handleEvent(SDL_Event&) override;
+		virtual void act(Uint32 delay) override;
 		virtual ~IdleState() {}
 	};
 	class RunState : public State {
 	public:
 		RunState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
-		virtual void handleEvent(SDL_Event&) override;
+		virtual void act(Uint32 delay) override;
 		virtual ~RunState() {}
 	};
 	class JumpState : public State {
@@ -48,31 +47,77 @@ namespace myGame {
 		JumpState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
-		virtual void handleEvent(SDL_Event&) override;
 		virtual ~JumpState() {}
 	};
 	class AttackState : public State {
 		bool ended;
+		bool cooldown;
 	public:
 		AttackState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
-			: State(entity, _w, _h, data, type, renderer), ended{ false } {}
+			: State(entity, _w, _h, data, type, renderer), ended{ false }, cooldown{ false } {}
 		virtual void reset() override;
 		virtual void act(Uint32 delay) override;
-		virtual void handleEvent(SDL_Event&) override;
 		virtual ~AttackState() {}
 	};
 	class HurtState : public State {
+		unsigned int hurtTimer;
 	public:
 		HurtState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
-			: State(entity, _w, _h, data, type, renderer) {}
-		virtual void handleEvent(SDL_Event&) override;
+			: State(entity, _w, _h, data, type, renderer), hurtTimer{ 0 } {}
+		virtual void reset() override;
+		virtual void act(Uint32 delay) override;
 		virtual ~HurtState() {}
 	};
 	class DeathState : public State {
 	public:
 		DeathState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
-		virtual void handleEvent(SDL_Event&) override;
+		virtual void act(Uint32 delay) override;
 		virtual ~DeathState() {}
+	};
+	//Enemy States
+	class EnemyIdleState : public State {
+	public:
+		EnemyIdleState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+			: State(entity, _w, _h, data, type, renderer) {}
+		virtual void act(Uint32 delay) override;
+		virtual ~EnemyIdleState() {}
+	};
+	class EnemyRunState : public State {
+	public:
+		EnemyRunState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+			: State(entity, _w, _h, data, type, renderer) {}
+		virtual void act(Uint32 delay) override;
+		virtual ~EnemyRunState() {}
+	};
+	class EnemyJumpState : public State {
+	public:
+		EnemyJumpState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+			: State(entity, _w, _h, data, type, renderer) {}
+		virtual void act(Uint32 delay) override;
+		virtual ~EnemyJumpState() {}
+	};
+	class EnemyAttackState : public State {
+		bool ended;
+		bool cooldown;
+	public:
+		EnemyAttackState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+			: State(entity, _w, _h, data, type, renderer), ended{ false }, cooldown{ false } {}
+		virtual void reset() override;
+		virtual void act(Uint32 delay) override;
+		virtual ~EnemyAttackState() {}
+	};
+	class EnemyHurtState : public State {
+	public:
+		EnemyHurtState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+			: State(entity, _w, _h, data, type, renderer) {}
+		virtual ~EnemyHurtState() {}
+	};
+	class EnemyDeathState : public State {
+	public:
+		EnemyDeathState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+			: State(entity, _w, _h, data, type, renderer) {}
+		virtual void act(Uint32 delay) override;
+		virtual ~EnemyDeathState() {}
 	};
 }
