@@ -1,0 +1,197 @@
+\doxysection{State.\+h}
+\hypertarget{_state_8h_source}{}\label{_state_8h_source}\mbox{\hyperlink{_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enums_8h}{Enums.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tools_8h}{Tools.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }std::map,\ std::vector;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy_game}{myGame}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_state_aed0b320ceeaa4fff57440fba52079bf2}{w}},\ \mbox{\hyperlink{classmy_game_1_1_state_abeecc063f038635f88f24ff2d8ffee51}{h}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ vector<SDL\_Texture*>\ \mbox{\hyperlink{classmy_game_1_1_state_a397e6830ddcd0182828d94df1ffffdd6}{frames}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_state_a45e056201a1a22e2d2d183308b68ae7c}{currentFrame}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Uint32\ \mbox{\hyperlink{classmy_game_1_1_state_a19351c5fa7e7349e4a06d80ad98e12fe}{timer}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ SDL\_RendererFlip\ \mbox{\hyperlink{classmy_game_1_1_state_a08f0d25267d2f2955d3997c303b3d534}{flip}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ e,\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ r);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_state_a6c284ace354a2e1f2e4738bcc3035d53}{act}}(Uint32\ delay);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_state_a00e1f84cd13a8903829c670dae3f0f81}{reset}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_state_a07b7116f635ab3c736963197a9b8edcb}{render}}(\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&\ camera,\ SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmy_game_1_1_state_ac3f67f01e4beecf824bc64d3c3335b36}{isLastFrame}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_state_a720672c4609a5f6dde94e4f607418c21}{\string~State}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ Player\ States}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_idle_state_a710a7f937ddce56b665573368999972b}{IdleState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_idle_state_a710a7f937ddce56b665573368999972b}{IdleState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_idle_state_afaf83fbdae6af258092fe459580b16b5}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_idle_state_aa1c949a47eb1bbb80bc40f837db32f2b}{\string~IdleState}}()\ \{\}}
+\DoxyCodeLine{00134\ \ \ \ \ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_run_state_a221b4f0bf88dd3799ff0a6d237ea5436}{RunState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_run_state_a221b4f0bf88dd3799ff0a6d237ea5436}{RunState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_run_state_acdb2e44daf33addc45989ad6c673ab4a}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_run_state_aef7c706e3463de0337a748e9f07f9616}{\string~RunState}}()\ \{\}}
+\DoxyCodeLine{00169\ \ \ \ \ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_jump_state_a7b0bc5335f4edba5e5a78f3b4b4d8fa2}{JumpState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_jump_state_a7b0bc5335f4edba5e5a78f3b4b4d8fa2}{JumpState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_jump_state_a866bad204124f2f51f1159203af83589}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_jump_state_a919369d8db56d74fc4158bfe6a58223c}{\string~JumpState}}()\ \{\}}
+\DoxyCodeLine{00204\ \ \ \ \ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_attack_state_a80c5211f5326ab1da01fab4796512684}{AttackState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ended;\ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ cooldown;\ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_attack_state_a80c5211f5326ab1da01fab4796512684}{AttackState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer),\ ended\{\ false\ \},\ cooldown\{\ false\ \}\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_attack_state_a179b471923b89a443c39175db12746f5}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_attack_state_ae7692e8de34dfa9343abfebbe8fbdae8}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_attack_state_a49537df840a826119e8d0c1568f32fe6}{\string~AttackState}}()\ \{\}}
+\DoxyCodeLine{00246\ \ \ \ \ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_hurt_state_a695fd0be1c69da6ce64c2e6626cc5238}{HurtState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hurtTimer;\ \ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_hurt_state_a695fd0be1c69da6ce64c2e6626cc5238}{HurtState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer),\ hurtTimer\{\ 0\ \}\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_hurt_state_a90101512a0d17688215ea9ae39ce1d2d}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_hurt_state_a3bf1c237e52dec92a6d42f741da3466c}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_hurt_state_a0a5e917280c1ef8e3fb60fde60835291}{\string~HurtState}}()\ \{\}}
+\DoxyCodeLine{00287\ \ \ \ \ \};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_death_state_a6aef1f3130dbf5636973ade0ffe59432}{DeathState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_death_state_a6aef1f3130dbf5636973ade0ffe59432}{DeathState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_death_state_aeecf0479ea56e037ab8d053556cbf491}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_death_state_aef6be26486899d7efd3ccf7d0d39743d}{\string~DeathState}}()\ \{\}}
+\DoxyCodeLine{00322\ \ \ \ \ \};}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{comment}{//\ Enemy\ States}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_idle_state_a28aa7f1b3015e07b13d9e25f71a2b869}{EnemyIdleState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_enemy_idle_state_a28aa7f1b3015e07b13d9e25f71a2b869}{EnemyIdleState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_idle_state_a43942aac2d2d9faf3403f146d7c6b207}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_idle_state_a0877d95b0d31d813be97612d0b1c4fc9}{\string~EnemyIdleState}}()\ \{\}}
+\DoxyCodeLine{00359\ \ \ \ \ \};}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_run_state_aa77994046ec53e038d9fc0009af14a2f}{EnemyRunState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_enemy_run_state_aa77994046ec53e038d9fc0009af14a2f}{EnemyRunState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_run_state_ade3224c2a63a12bc34b9ed06a9332308}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_run_state_a6c000ea43a4e4f5fd9c903df8d866b63}{\string~EnemyRunState}}()\ \{\}}
+\DoxyCodeLine{00394\ \ \ \ \ \};}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_jump_state_ad93c921f80535d62e7e4ce9264bcb4f9}{EnemyJumpState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_enemy_jump_state_ad93c921f80535d62e7e4ce9264bcb4f9}{EnemyJumpState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_jump_state_ad1dd68e4a7deac5a6b85939d4b1a5876}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_jump_state_a114558ea609b4159dacb03a3182188f9}{\string~EnemyJumpState}}()\ \{\}}
+\DoxyCodeLine{00429\ \ \ \ \ \};}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_attack_state_a0912d78fcd7b8ef9a010cd7a048e352f}{EnemyAttackState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ended;\ \ }
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ cooldown;\ \ }
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_enemy_attack_state_a0912d78fcd7b8ef9a010cd7a048e352f}{EnemyAttackState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer),\ ended\{\ false\ \},\ cooldown\{\ false\ \}\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_attack_state_a909c223cc3c5cc2af1ff742099180132}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_attack_state_a9ff5286f763f89a4b6591ad070aefa62}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_attack_state_a6b0d0cb6d912117388e1dab888ddd3c0}{\string~EnemyAttackState}}()\ \{\}}
+\DoxyCodeLine{00471\ \ \ \ \ \};}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_hurt_state_a03f57416cd59703d763ffb45500cb491}{EnemyHurtState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hurtTimer;\ \ }
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_enemy_hurt_state_a03f57416cd59703d763ffb45500cb491}{EnemyHurtState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer),\ hurtTimer\{\ 0\ \}\ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_hurt_state_af7aa91037997e35fe6b1603b3d9efd7b}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_hurt_state_ac68a0a4dd8d2c6cc9cfc5d7daa2f4471}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_hurt_state_a682c29ff0c648dbd3f8a7bf3b8f50ef9}{\string~EnemyHurtState}}()\ \{\}}
+\DoxyCodeLine{00512\ \ \ \ \ \};}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_death_state_a18bfeb828a703be7410d956a16f2387a}{EnemyDeathState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}\ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_enemy_death_state_a18bfeb828a703be7410d956a16f2387a}{EnemyDeathState}}(\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}}*\ \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \textcolor{keywordtype}{int}\ \_w,\ \textcolor{keywordtype}{int}\ \_h,\ \mbox{\hyperlink{structmy_game_1_1_state_data}{StateData}}*\ data,\ \textcolor{keywordtype}{string}\ type,\ SDL\_Renderer*\ renderer)}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}}(\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}},\ \_w,\ \_h,\ data,\ type,\ renderer)\ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_death_state_a8b94d1dcb97a18b56f15759d348f2429}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_death_state_a8cd7dce0ed5d86c6a312013e70fda2b3}{\string~EnemyDeathState}}()\ \{\}}
+\DoxyCodeLine{00547\ \ \ \ \ \};}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \}}
+
+\end{DoxyCode}

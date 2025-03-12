@@ -1,0 +1,128 @@
+\doxysection{my\+Game\+::Drawable Class Reference}
+\hypertarget{classmy_game_1_1_drawable}{}\label{classmy_game_1_1_drawable}\index{myGame::Drawable@{myGame::Drawable}}
+
+
+An abstract class representing objects that can be drawn and updated in the game world.  
+
+
+
+
+{\ttfamily \#include $<$Drawable.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Drawable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmy_game_1_1_drawable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&camera, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)=0
+\begin{DoxyCompactList}\small\item\em Renders the object using the provided camera and renderer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{act}} (Uint32 delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates the object\textquotesingle{}s state based on the elapsed time. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}{get\+Rect}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s bounding rectangle. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Point \mbox{\hyperlink{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}{get\+Focus}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieves the focus point of the object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class representing objects that can be drawn and updated in the game world. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}\index{myGame::Drawable@{myGame::Drawable}!````~Drawable@{\texorpdfstring{$\sim$}{\string~}Drawable}}
+\index{````~Drawable@{\texorpdfstring{$\sim$}{\string~}Drawable}!myGame::Drawable@{myGame::Drawable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Drawable()}{\string~Drawable()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81} 
+virtual my\+Game\+::\+Drawable\+::\texorpdfstring{$\sim$}{\string~}\+Drawable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for proper cleanup in derived classes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}\index{myGame::Drawable@{myGame::Drawable}!act@{act}}
+\index{act@{act}!myGame::Drawable@{myGame::Drawable}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787} 
+virtual void my\+Game\+::\+Drawable\+::act (\begin{DoxyParamCaption}\item[{Uint32}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the object\textquotesingle{}s state based on the elapsed time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last update. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmy_game_1_1_enemy_a2d2415c64d8b64470fe01e6dd15a1845}{my\+Game\+::\+Enemy}}, \mbox{\hyperlink{classmy_game_1_1_main_menu_a9d4c9106c8455f3d87b29abd78afa52e}{my\+Game\+::\+Main\+Menu}}, \mbox{\hyperlink{classmy_game_1_1_map_a6254b002a716e67ead675d5922a90463}{my\+Game\+::\+Map}}, and \mbox{\hyperlink{classmy_game_1_1_player_ae721fb478f5eb948a06dd235965ecece}{my\+Game\+::\+Player}}.
+
+\Hypertarget{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}\index{myGame::Drawable@{myGame::Drawable}!getFocus@{getFocus}}
+\index{getFocus@{getFocus}!myGame::Drawable@{myGame::Drawable}}
+\doxysubsubsection{\texorpdfstring{getFocus()}{getFocus()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd} 
+virtual SDL\+\_\+\+Point my\+Game\+::\+Drawable\+::get\+Focus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the focus point of the object. 
+
+\begin{DoxyReturn}{Returns}
+The SDL\+\_\+\+Point representing the focus position. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmy_game_1_1_entity_a990346b9603bd010ac67040ae872e2a5}{my\+Game\+::\+Entity}}, \mbox{\hyperlink{classmy_game_1_1_main_menu_a054020f9fc5105dbd75beb0269a4449c}{my\+Game\+::\+Main\+Menu}}, and \mbox{\hyperlink{classmy_game_1_1_map_a53dd7aec754068f95f318851b8964388}{my\+Game\+::\+Map}}.
+
+\Hypertarget{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}\index{myGame::Drawable@{myGame::Drawable}!getRect@{getRect}}
+\index{getRect@{getRect}!myGame::Drawable@{myGame::Drawable}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc} 
+virtual SDL\+\_\+\+Rect my\+Game\+::\+Drawable\+::get\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the object\textquotesingle{}s bounding rectangle. 
+
+\begin{DoxyReturn}{Returns}
+The SDL\+\_\+\+Rect representing the object\textquotesingle{}s position and size. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classmy_game_1_1_entity_a2d5f3204eb117529366ad8d3d469dc55}{my\+Game\+::\+Entity}}, \mbox{\hyperlink{classmy_game_1_1_main_menu_a6385c72cbd9c4ef2b886f06cd30e68e0}{my\+Game\+::\+Main\+Menu}}, and \mbox{\hyperlink{classmy_game_1_1_map_a89b54c081b0c37957244b3d526685c29}{my\+Game\+::\+Map}}.
+
+\Hypertarget{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}\index{myGame::Drawable@{myGame::Drawable}!render@{render}}
+\index{render@{render}!myGame::Drawable@{myGame::Drawable}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca} 
+virtual void my\+Game\+::\+Drawable\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&}]{camera}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renders the object using the provided camera and renderer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera used for rendering. \\
+\hline
+{\em renderer} & The SDL renderer. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classmy_game_1_1_entity_a75237d599945277ae16a5723252137d3}{my\+Game\+::\+Entity}}, \mbox{\hyperlink{classmy_game_1_1_main_menu_a4c00f6979dc4817f8fbd0e681df787f0}{my\+Game\+::\+Main\+Menu}}, and \mbox{\hyperlink{classmy_game_1_1_map_ab76049d40521a5fd29a0cd84670d36f9}{my\+Game\+::\+Map}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_drawable_8h}{Drawable.\+h}}\end{DoxyCompactItemize}

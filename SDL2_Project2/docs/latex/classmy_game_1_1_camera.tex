@@ -1,0 +1,163 @@
+\doxysection{my\+Game\+::Camera Class Reference}
+\hypertarget{classmy_game_1_1_camera}{}\label{classmy_game_1_1_camera}\index{myGame::Camera@{myGame::Camera}}
+
+
+A class responsible for handling camera movement in the game world.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_camera_afe4b06d4a61725553fc0a66d9f7bd907}{Camera}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes the camera with default parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_game_1_1_camera_a0c78fffe1aca8ab3a26ec435f017dcee}{Camera}} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em Constructor with parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_game_1_1_camera_a02d8beda63fd1a623db19701a849542d}{Camera}} (SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_camera_a0df41a0cb613dff0c162477d26c20b4b}{rect}})
+\begin{DoxyCompactList}\small\item\em Constructor that accepts an SDL\+\_\+\+Rect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_camera_a82478f246dfb2b45346f70ac1e2d01c6}{move}} (SDL\+\_\+\+Point target, SDL\+\_\+\+Rect bounds, Uint32 delta\+Time)
+\begin{DoxyCompactList}\small\item\em Moves the camera based on a target point, bounds, and elapsed time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_camera_aca4dc907bd0c24cbb00a076b6dd8dd4e}{move}} (\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} dir, SDL\+\_\+\+Rect bounds)
+\begin{DoxyCompactList}\small\item\em Moves the camera in a given direction while respecting bounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_camera_a0df41a0cb613dff0c162477d26c20b4b}{rect}}
+\begin{DoxyCompactList}\small\item\em The camera\textquotesingle{}s rectangular area. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classmy_game_1_1_camera_a285a39c968303794ee529d7be844c41b}{max\+SpeedX}}
+\begin{DoxyCompactList}\small\item\em Maximum movement speed of the camera along the X axis. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classmy_game_1_1_camera_a63e8afa98d9c0b6e5533a94ff2db2d42}{max\+SpeedY}}
+\begin{DoxyCompactList}\small\item\em Maximum movement speed of the camera along the Y axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class responsible for handling camera movement in the game world. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_camera_afe4b06d4a61725553fc0a66d9f7bd907}\index{myGame::Camera@{myGame::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_afe4b06d4a61725553fc0a66d9f7bd907} 
+my\+Game\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Initializes the camera with default parameters. 
+
+\Hypertarget{classmy_game_1_1_camera_a0c78fffe1aca8ab3a26ec435f017dcee}\index{myGame::Camera@{myGame::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_a0c78fffe1aca8ab3a26ec435f017dcee} 
+my\+Game\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Constructor with parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Initial X coordinate. \\
+\hline
+{\em y} & Initial Y coordinate. \\
+\hline
+{\em w} & \doxylink{classmy_game_1_1_camera}{Camera} width. \\
+\hline
+{\em h} & \doxylink{classmy_game_1_1_camera}{Camera} height. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_camera_a02d8beda63fd1a623db19701a849542d}\index{myGame::Camera@{myGame::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_a02d8beda63fd1a623db19701a849542d} 
+my\+Game\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{rect}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that accepts an SDL\+\_\+\+Rect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & A rectangle defining the camera\textquotesingle{}s size and position. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_camera_aca4dc907bd0c24cbb00a076b6dd8dd4e}\index{myGame::Camera@{myGame::Camera}!move@{move}}
+\index{move@{move}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_aca4dc907bd0c24cbb00a076b6dd8dd4e} 
+void my\+Game\+::\+Camera\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}}]{dir}{, }\item[{SDL\+\_\+\+Rect}]{bounds}{}\end{DoxyParamCaption})}
+
+
+
+Moves the camera in a given direction while respecting bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The direction in which the camera should move. \\
+\hline
+{\em bounds} & The area within which the camera can move. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_camera_a82478f246dfb2b45346f70ac1e2d01c6}\index{myGame::Camera@{myGame::Camera}!move@{move}}
+\index{move@{move}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_a82478f246dfb2b45346f70ac1e2d01c6} 
+void my\+Game\+::\+Camera\+::move (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Point}]{target}{, }\item[{SDL\+\_\+\+Rect}]{bounds}{, }\item[{Uint32}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Moves the camera based on a target point, bounds, and elapsed time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The point towards which the camera should move. \\
+\hline
+{\em bounds} & The area within which the camera can move. \\
+\hline
+{\em delta\+Time} & Time elapsed since the last update. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmy_game_1_1_camera_a285a39c968303794ee529d7be844c41b}\index{myGame::Camera@{myGame::Camera}!maxSpeedX@{maxSpeedX}}
+\index{maxSpeedX@{maxSpeedX}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{maxSpeedX}{maxSpeedX}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_a285a39c968303794ee529d7be844c41b} 
+const int my\+Game\+::\+Camera\+::max\+SpeedX}
+
+
+
+Maximum movement speed of the camera along the X axis. 
+
+\Hypertarget{classmy_game_1_1_camera_a63e8afa98d9c0b6e5533a94ff2db2d42}\index{myGame::Camera@{myGame::Camera}!maxSpeedY@{maxSpeedY}}
+\index{maxSpeedY@{maxSpeedY}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{maxSpeedY}{maxSpeedY}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_a63e8afa98d9c0b6e5533a94ff2db2d42} 
+const int my\+Game\+::\+Camera\+::max\+SpeedY}
+
+
+
+Maximum movement speed of the camera along the Y axis. 
+
+\Hypertarget{classmy_game_1_1_camera_a0df41a0cb613dff0c162477d26c20b4b}\index{myGame::Camera@{myGame::Camera}!rect@{rect}}
+\index{rect@{rect}!myGame::Camera@{myGame::Camera}}
+\doxysubsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_camera_a0df41a0cb613dff0c162477d26c20b4b} 
+SDL\+\_\+\+Rect my\+Game\+::\+Camera\+::rect}
+
+
+
+The camera\textquotesingle{}s rectangular area. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

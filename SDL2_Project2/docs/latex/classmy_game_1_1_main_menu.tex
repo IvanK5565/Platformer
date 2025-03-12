@@ -1,0 +1,172 @@
+\doxysection{my\+Game\+::Main\+Menu Class Reference}
+\hypertarget{classmy_game_1_1_main_menu}{}\label{classmy_game_1_1_main_menu}\index{myGame::MainMenu@{myGame::MainMenu}}
+
+
+Represents the main menu screen of the game.  
+
+
+
+
+{\ttfamily \#include $<$Screens.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Main\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmy_game_1_1_main_menu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_main_menu_a90a04c2994165caaf7058472c6d6c07a}{Main\+Menu}} (\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}}, \mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}r)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the main menu. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_main_menu_a63b9adbe3dbb2ccf201fb09fdf27722d}{\texorpdfstring{$\sim$}{\string~}\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_main_menu_a4c00f6979dc4817f8fbd0e681df787f0}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}) override
+\begin{DoxyCompactList}\small\item\em Renders the main menu screen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_main_menu_a9d4c9106c8455f3d87b29abd78afa52e}{act}} (Uint32) override
+\begin{DoxyCompactList}\small\item\em Handles the game logic for the main menu, such as button presses. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_main_menu_a6385c72cbd9c4ef2b886f06cd30e68e0}{get\+Rect}} () override
+\begin{DoxyCompactList}\small\item\em Gets the rectangle representing the main menu screen. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Point \mbox{\hyperlink{classmy_game_1_1_main_menu_a054020f9fc5105dbd75beb0269a4449c}{get\+Focus}} () override
+\begin{DoxyCompactList}\small\item\em Gets the point that defines the focus of the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_drawable}{my\+Game\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_screen}{my\+Game\+::\+Screen}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}} (\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}\+\_\+game, \mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}r)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the screen with the game, data, and renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmy_game_1_1_screen}{my\+Game\+::\+Screen}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}}
+\begin{DoxyCompactList}\small\item\em Pointer to the main game object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}
+\begin{DoxyCompactList}\small\item\em Pointer to the data object that holds game-\/related data. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1}{renderer}}
+\begin{DoxyCompactList}\small\item\em The renderer used to draw graphics on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the main menu screen of the game. 
+
+This class is responsible for rendering and interacting with the main menu screen, handling button clicks for starting the game or exiting. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_main_menu_a90a04c2994165caaf7058472c6d6c07a}\index{myGame::MainMenu@{myGame::MainMenu}!MainMenu@{MainMenu}}
+\index{MainMenu@{MainMenu}!myGame::MainMenu@{myGame::MainMenu}}
+\doxysubsubsection{\texorpdfstring{MainMenu()}{MainMenu()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_main_menu_a90a04c2994165caaf7058472c6d6c07a} 
+my\+Game\+::\+Main\+Menu\+::\+Main\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{, }\item[{\mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for initializing the main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Pointer to the game object. \\
+\hline
+{\em data} & Pointer to the data object. \\
+\hline
+{\em r} & Renderer used for rendering the screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_main_menu_a63b9adbe3dbb2ccf201fb09fdf27722d}\index{myGame::MainMenu@{myGame::MainMenu}!````~MainMenu@{\texorpdfstring{$\sim$}{\string~}MainMenu}}
+\index{````~MainMenu@{\texorpdfstring{$\sim$}{\string~}MainMenu}!myGame::MainMenu@{myGame::MainMenu}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainMenu()}{\string~MainMenu()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_main_menu_a63b9adbe3dbb2ccf201fb09fdf27722d} 
+virtual my\+Game\+::\+Main\+Menu\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for cleaning up resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_main_menu_a9d4c9106c8455f3d87b29abd78afa52e}\index{myGame::MainMenu@{myGame::MainMenu}!act@{act}}
+\index{act@{act}!myGame::MainMenu@{myGame::MainMenu}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_main_menu_a9d4c9106c8455f3d87b29abd78afa52e} 
+void my\+Game\+::\+Main\+Menu\+::act (\begin{DoxyParamCaption}\item[{Uint32}]{delay}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the game logic for the main menu, such as button presses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & The delay between frames to control the update rate. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_main_menu_a054020f9fc5105dbd75beb0269a4449c}\index{myGame::MainMenu@{myGame::MainMenu}!getFocus@{getFocus}}
+\index{getFocus@{getFocus}!myGame::MainMenu@{myGame::MainMenu}}
+\doxysubsubsection{\texorpdfstring{getFocus()}{getFocus()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_main_menu_a054020f9fc5105dbd75beb0269a4449c} 
+SDL\+\_\+\+Point my\+Game\+::\+Main\+Menu\+::get\+Focus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the point that defines the focus of the screen. 
+
+\begin{DoxyReturn}{Returns}
+The point that represents the focus of the screen. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_main_menu_a6385c72cbd9c4ef2b886f06cd30e68e0}\index{myGame::MainMenu@{myGame::MainMenu}!getRect@{getRect}}
+\index{getRect@{getRect}!myGame::MainMenu@{myGame::MainMenu}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_main_menu_a6385c72cbd9c4ef2b886f06cd30e68e0} 
+SDL\+\_\+\+Rect my\+Game\+::\+Main\+Menu\+::get\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the rectangle representing the main menu screen. 
+
+\begin{DoxyReturn}{Returns}
+The rectangle representing the screen area. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_main_menu_a4c00f6979dc4817f8fbd0e681df787f0}\index{myGame::MainMenu@{myGame::MainMenu}!render@{render}}
+\index{render@{render}!myGame::MainMenu@{myGame::MainMenu}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_main_menu_a4c00f6979dc4817f8fbd0e681df787f0} 
+void my\+Game\+::\+Main\+Menu\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&}]{camera}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the main menu screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera object to handle viewport rendering. \\
+\hline
+{\em renderer} & The SDL renderer to draw textures. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}{my\+Game\+::\+Drawable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_screens_8h}{Screens.\+h}}\item 
+\mbox{\hyperlink{_screens_8cpp}{Screens.\+cpp}}\end{DoxyCompactItemize}

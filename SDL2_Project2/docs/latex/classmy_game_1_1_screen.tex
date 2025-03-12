@@ -1,0 +1,110 @@
+\doxysection{my\+Game\+::Screen Class Reference}
+\hypertarget{classmy_game_1_1_screen}{}\label{classmy_game_1_1_screen}\index{myGame::Screen@{myGame::Screen}}
+
+
+Abstract base class representing a screen in the game.  
+
+
+
+
+{\ttfamily \#include $<$Screens.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Screen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmy_game_1_1_screen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}} (\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}\+\_\+game, \mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}r)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the screen with the game, data, and renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}}
+\begin{DoxyCompactList}\small\item\em Pointer to the main game object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}
+\begin{DoxyCompactList}\small\item\em Pointer to the data object that holds game-\/related data. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1}{renderer}}
+\begin{DoxyCompactList}\small\item\em The renderer used to draw graphics on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_drawable}{my\+Game\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&camera, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)=0
+\begin{DoxyCompactList}\small\item\em Renders the object using the provided camera and renderer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{act}} (Uint32 delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates the object\textquotesingle{}s state based on the elapsed time. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}{get\+Rect}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s bounding rectangle. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Point \mbox{\hyperlink{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}{get\+Focus}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieves the focus point of the object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a screen in the game. 
+
+This class serves as a base for different screens in the game (e.\+g., main menu, game map). It provides methods for rendering and handling game logic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}\index{myGame::Screen@{myGame::Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!myGame::Screen@{myGame::Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e} 
+my\+Game\+::\+Screen\+::\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}}]{\+\_\+game}{, }\item[{\mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor for initializing the screen with the game, data, and renderer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+game} & Pointer to the game object. \\
+\hline
+{\em data} & Pointer to the data object. \\
+\hline
+{\em r} & Renderer used for rendering. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}\index{myGame::Screen@{myGame::Screen}!data@{data}}
+\index{data@{data}!myGame::Screen@{myGame::Screen}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2} 
+\mbox{\hyperlink{structmy_game_1_1_data}{Data}}\texorpdfstring{$\ast$}{*} my\+Game\+::\+Screen\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the data object that holds game-\/related data. 
+
+\Hypertarget{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}\index{myGame::Screen@{myGame::Screen}!game@{game}}
+\index{game@{game}!myGame::Screen@{myGame::Screen}}
+\doxysubsubsection{\texorpdfstring{game}{game}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d} 
+\mbox{\hyperlink{classmy_game_1_1_game}{Game}}\texorpdfstring{$\ast$}{*} my\+Game\+::\+Screen\+::game\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the main game object. 
+
+\Hypertarget{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1}\index{myGame::Screen@{myGame::Screen}!renderer@{renderer}}
+\index{renderer@{renderer}!myGame::Screen@{myGame::Screen}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1} 
+SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*} my\+Game\+::\+Screen\+::renderer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The renderer used to draw graphics on the screen. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_screens_8h}{Screens.\+h}}\end{DoxyCompactItemize}

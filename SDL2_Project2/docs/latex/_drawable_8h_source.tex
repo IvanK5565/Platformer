@@ -1,0 +1,25 @@
+\doxysection{Drawable.\+h}
+\hypertarget{_drawable_8h_source}{}\label{_drawable_8h_source}\mbox{\hyperlink{_drawable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_collide_8h}{Collide.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_state_8h}{State.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy_game}{myGame}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_drawable}{Drawable}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}{render}}(\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&\ camera,\ SDL\_Renderer*\ renderer)\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{act}}(Uint32\ deltaTime)\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Rect\ \mbox{\hyperlink{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}{getRect}}()\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Point\ \mbox{\hyperlink{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}{getFocus}}()\ =\ 0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\string~Drawable}}()\ \{\}}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}

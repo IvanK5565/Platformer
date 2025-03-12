@@ -1,0 +1,94 @@
+\doxysection{Tools.\+h}
+\hypertarget{_tools_8h_source}{}\label{_tools_8h_source}\mbox{\hyperlink{_tools_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enums_8h}{Enums.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL\_Image.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }std::string,\ std::vector,\ std::queue;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy_game}{myGame}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ trim(\textcolor{keyword}{const}\ std::string\&\ source)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ s(source);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ s.erase(0,\ s.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)n\(\backslash\)r\(\backslash\)t"{}}));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ s.erase(s.find\_last\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)n\(\backslash\)r\(\backslash\)t"{}})\ +\ 1);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ trim(\textcolor{keyword}{const}\ std::string\&\ source,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::string\ s(source);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ s.erase(0,\ s.find\_first\_not\_of(c));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ s.erase(s.find\_last\_not\_of(c)\ +\ 1);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ split(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ txt,\ vector<string>\&\ strs,\ \textcolor{keywordtype}{char}\ ch)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ txt.find(ch);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ initialPos\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ strs.clear();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decompose\ statement}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (pos\ !=\ string::npos)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ strs.push\_back(txt.substr(initialPos,\ pos\ -\/\ initialPos));}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ initialPos\ =\ pos\ +\ 1;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ txt.find(ch,\ initialPos);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ last\ one}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ strs.push\_back(txt.substr(initialPos,\ std::min(pos,\ txt.size())\ -\/\ initialPos\ +\ 1));}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strs.size();}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ split(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ txt,\ \textcolor{keywordtype}{char}\ ch)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ vector<string>\ strs;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ split(txt,\ strs,\ ch);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strs;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacemy_game_a483f9966c468516df355dd3b9cefb11d}{StatusCode}}\ code;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{static}\ queue<string>\ errors;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ getError()\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errors.empty())\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ buf\ =\ errors.front();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ errors.pop();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errors.empty())\ code\ =\ \mbox{\hyperlink{namespacemy_game_a483f9966c468516df355dd3b9cefb11da0d536515ce0fb6e96a5510b6556f30f2}{StatusCode::CORRECT}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setError(\textcolor{keywordtype}{string}\ mess)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ errors.push(mess);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ code\ =\ \mbox{\hyperlink{namespacemy_game_a483f9966c468516df355dd3b9cefb11da80766be3cf3fb6bcdd2ae04ce1e5a30e}{StatusCode::UNCORRECT}};}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{static}\ SDL\_Texture*\ loadTexture(SDL\_Renderer*\ renderer,\ \textcolor{keywordtype}{string}\ path)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ SDL\_Texture*\ newTexture\ =\ NULL;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ SDL\_Surface*\ loadedSurface\ =\ IMG\_Load(path.c\_str());}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (loadedSurface\ ==\ NULL)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Unable\ to\ load\ image\ \%s!\ SDL\_image\ Error:\ \%s\(\backslash\)n"{}},\ path.c\_str(),\ IMG\_GetError());}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ setError(\textcolor{stringliteral}{"{}Unable\ to\ load\ image\ "{}}\ +\ path\ +\ \textcolor{stringliteral}{"{}!SDL\_image\ Error\ :\ "{}}\ +\ IMG\_GetError()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ newTexture\ =\ SDL\_CreateTextureFromSurface(renderer,\ loadedSurface);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newTexture\ ==\ NULL)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Unable\ to\ create\ texture\ from\ \%s!\ SDL\ Error:\ \%s\(\backslash\)n"{}},\ path.c\_str(),\ SDL\_GetError());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ setError(\textcolor{stringliteral}{"{}Unable\ to\ load\ image\ "{}}\ +\ path\ +\ \textcolor{stringliteral}{"{}!SDL\_image\ Error\ :\ "{}}\ +\ SDL\_GetError()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ rid\ of\ old\ loaded\ surface}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ SDL\_FreeSurface(loadedSurface);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newTexture;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \}}
+
+\end{DoxyCode}

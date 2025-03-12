@@ -1,0 +1,254 @@
+\doxysection{my\+Game\+::Rectangle Class Reference}
+\hypertarget{classmy_game_1_1_rectangle}{}\label{classmy_game_1_1_rectangle}\index{myGame::Rectangle@{myGame::Rectangle}}
+
+
+Represents a rectangular collision object.  
+
+
+
+
+{\ttfamily \#include $<$Collide.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmy_game_1_1_rectangle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle_a601cbb45d5d8b7526029de8c7b41493c}{Rectangle}} (int \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}}, int \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}}, int w, int h)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle_a2c9db7f0691577304a8755d8dc125bc9}{Rectangle}} (SDL\+\_\+\+Rect rect)
+\begin{DoxyCompactList}\small\item\em Constructor using an SDL\+\_\+\+Rect. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_rectangle_a38b7cfa6593ccf0ecf38c840f16c2af1}{\texorpdfstring{$\sim$}{\string~}\+Rectangle}} ()
+\item 
+virtual \mbox{\hyperlink{structmy_game_1_1_collision_info}{Collision\+Info}} \mbox{\hyperlink{classmy_game_1_1_rectangle_a35a48e781a6716d481ee8aec72c243e6}{check\+Collision}} (const \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \&) override
+\begin{DoxyCompactList}\small\item\em Checks for collision with a rectangle. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{structmy_game_1_1_collision_info}{Collision\+Info}} \mbox{\hyperlink{classmy_game_1_1_rectangle_af8aacaec3179678e05377b173fd30d65}{check\+Collision}} (const int \+\_\+x, const int \+\_\+y) override
+\begin{DoxyCompactList}\small\item\em Checks for collision at a specific point. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_rectangle_a76ac311b29a6c83107d2cba0251536a9}{draw\+Border}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&) override
+\begin{DoxyCompactList}\small\item\em Draws the collision border. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacemy_game_acbb2975143387b6f0ea2e384b8a9910a}{Collide\+Type}} \mbox{\hyperlink{classmy_game_1_1_rectangle_a915e06e5ae040ca9b79b1ed9cd841625}{get\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Gets the type of collision object. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_rectangle_a57d8df0365f9165dc3890b9a9521abe0}{get\+Rect}} ()
+\begin{DoxyCompactList}\small\item\em Gets the SDL\+\_\+\+Rect representation of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_collide}{my\+Game\+::\+Collide}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}} (int \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}}, int \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_collide_a74356b1d9ac7873da76f4df690c76585}{set\+Pos}} (int newX, int newY)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s position. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_collide_a3a9428f246b392cbf7abd891c5106dd2}{\texorpdfstring{$\sim$}{\string~}\+Collide}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc}{width}}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2}{height}}
+\begin{DoxyCompactList}\small\item\em Width and height of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classmy_game_1_1_collide}{my\+Game\+::\+Collide}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}}
+\begin{DoxyCompactList}\small\item\em Position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmy_game_1_1_rectangle_a19d10af2934c79e843307bde3f1f82c2}{Right\+Triangle}}
+\item 
+class \mbox{\hyperlink{classmy_game_1_1_rectangle_a0c0200792413eb2b8c508b417a5a19a7}{Left\+Triangle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a rectangular collision object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_rectangle_a601cbb45d5d8b7526029de8c7b41493c}\index{myGame::Rectangle@{myGame::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a601cbb45d5d8b7526029de8c7b41493c} 
+my\+Game\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position. \\
+\hline
+{\em y} & Y position. \\
+\hline
+{\em w} & Width. \\
+\hline
+{\em h} & Height. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_rectangle_a2c9db7f0691577304a8755d8dc125bc9}\index{myGame::Rectangle@{myGame::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a2c9db7f0691577304a8755d8dc125bc9} 
+my\+Game\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor using an SDL\+\_\+\+Rect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & SDL rectangle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_rectangle_a38b7cfa6593ccf0ecf38c840f16c2af1}\index{myGame::Rectangle@{myGame::Rectangle}!````~Rectangle@{\texorpdfstring{$\sim$}{\string~}Rectangle}}
+\index{````~Rectangle@{\texorpdfstring{$\sim$}{\string~}Rectangle}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Rectangle()}{\string~Rectangle()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a38b7cfa6593ccf0ecf38c840f16c2af1} 
+virtual my\+Game\+::\+Rectangle\+::\texorpdfstring{$\sim$}{\string~}\+Rectangle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_rectangle_af8aacaec3179678e05377b173fd30d65}\index{myGame::Rectangle@{myGame::Rectangle}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_af8aacaec3179678e05377b173fd30d65} 
+\mbox{\hyperlink{structmy_game_1_1_collision_info}{Collision\+Info}} my\+Game\+::\+Rectangle\+::check\+Collision (\begin{DoxyParamCaption}\item[{const int}]{\+\_\+x}{, }\item[{const int}]{\+\_\+y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks for collision at a specific point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & X coordinate. \\
+\hline
+{\em \+\_\+y} & Y coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Collision information. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_collide_a9a887f1668f75910fd0c7eee77824b37}{my\+Game\+::\+Collide}}.
+
+\Hypertarget{classmy_game_1_1_rectangle_a35a48e781a6716d481ee8aec72c243e6}\index{myGame::Rectangle@{myGame::Rectangle}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a35a48e781a6716d481ee8aec72c243e6} 
+\mbox{\hyperlink{structmy_game_1_1_collision_info}{Collision\+Info}} my\+Game\+::\+Rectangle\+::check\+Collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks for collision with a rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The rectangle to check collision with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Collision information. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_collide_a5f9733de7e724b559179f53c6c786fdf}{my\+Game\+::\+Collide}}.
+
+\Hypertarget{classmy_game_1_1_rectangle_a76ac311b29a6c83107d2cba0251536a9}\index{myGame::Rectangle@{myGame::Rectangle}!drawBorder@{drawBorder}}
+\index{drawBorder@{drawBorder}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{drawBorder()}{drawBorder()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a76ac311b29a6c83107d2cba0251536a9} 
+void my\+Game\+::\+Rectangle\+::draw\+Border (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{, }\item[{\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&}]{camera}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draws the collision border. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & SDL renderer. \\
+\hline
+{\em camera} & The camera view. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_collide_adc43e37494deb011b5ca30982182508f}{my\+Game\+::\+Collide}}.
+
+\Hypertarget{classmy_game_1_1_rectangle_a57d8df0365f9165dc3890b9a9521abe0}\index{myGame::Rectangle@{myGame::Rectangle}!getRect@{getRect}}
+\index{getRect@{getRect}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a57d8df0365f9165dc3890b9a9521abe0} 
+SDL\+\_\+\+Rect my\+Game\+::\+Rectangle\+::get\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the SDL\+\_\+\+Rect representation of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+Rect with position and size. 
+\end{DoxyReturn}
+\Hypertarget{classmy_game_1_1_rectangle_a915e06e5ae040ca9b79b1ed9cd841625}\index{myGame::Rectangle@{myGame::Rectangle}!getType@{getType}}
+\index{getType@{getType}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a915e06e5ae040ca9b79b1ed9cd841625} 
+\mbox{\hyperlink{namespacemy_game_acbb2975143387b6f0ea2e384b8a9910a}{Collide\+Type}} my\+Game\+::\+Rectangle\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of collision object. 
+
+\begin{DoxyReturn}{Returns}
+Collision type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_collide_ae32189b79a9b1bd29a9bc4bc93ef96c9}{my\+Game\+::\+Collide}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classmy_game_1_1_rectangle_a0c0200792413eb2b8c508b417a5a19a7}\index{myGame::Rectangle@{myGame::Rectangle}!LeftTriangle@{LeftTriangle}}
+\index{LeftTriangle@{LeftTriangle}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{LeftTriangle}{LeftTriangle}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a0c0200792413eb2b8c508b417a5a19a7} 
+friend class \mbox{\hyperlink{classmy_game_1_1_left_triangle}{Left\+Triangle}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classmy_game_1_1_rectangle_a19d10af2934c79e843307bde3f1f82c2}\index{myGame::Rectangle@{myGame::Rectangle}!RightTriangle@{RightTriangle}}
+\index{RightTriangle@{RightTriangle}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{RightTriangle}{RightTriangle}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a19d10af2934c79e843307bde3f1f82c2} 
+friend class \mbox{\hyperlink{classmy_game_1_1_right_triangle}{Right\+Triangle}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2}\index{myGame::Rectangle@{myGame::Rectangle}!height@{height}}
+\index{height@{height}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2} 
+int my\+Game\+::\+Rectangle\+::height}
+
+
+
+Width and height of the rectangle. 
+
+\Hypertarget{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc}\index{myGame::Rectangle@{myGame::Rectangle}!width@{width}}
+\index{width@{width}!myGame::Rectangle@{myGame::Rectangle}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc} 
+int my\+Game\+::\+Rectangle\+::width}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_collide_8h}{Collide.\+h}}\item 
+\mbox{\hyperlink{_collide_8cpp}{Collide.\+cpp}}\end{DoxyCompactItemize}

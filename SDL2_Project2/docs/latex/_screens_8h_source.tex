@@ -1,0 +1,117 @@
+\doxysection{Screens.\+h}
+\hypertarget{_screens_8h_source}{}\label{_screens_8h_source}\mbox{\hyperlink{_screens_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_drawable_8h}{Drawable.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_8h}{Entity.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tools_8h}{Tools.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL\_Image.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }std::vector,\ std::string;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy_game}{myGame}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_game}{Game}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_drawable}{Drawable}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_game}{Game}}*\ \mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structmy_game_1_1_data}{Data}}*\ \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ SDL\_Renderer*\ \mbox{\hyperlink{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1}{renderer}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}}(\mbox{\hyperlink{classmy_game_1_1_game}{Game}}*\ \_game,\ \mbox{\hyperlink{structmy_game_1_1_data}{Data}}*\ \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}},\ SDL\_Renderer*\ r)\ :\ \mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}}(\_game),\ \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}(\mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}),\ \mbox{\hyperlink{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1}{renderer}}(r)\ \{\}}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_main_menu_a90a04c2994165caaf7058472c6d6c07a}{MainMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ SDL\_Texture*\ playButtonTexture;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ SDL\_Texture*\ exitButtonTexture;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ SDL\_Rect\ play;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ SDL\_Rect\ exit;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mX,\ mY;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mPressed;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_main_menu_a90a04c2994165caaf7058472c6d6c07a}{MainMenu}}(\mbox{\hyperlink{classmy_game_1_1_game}{Game}}*\ \mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}},\ \mbox{\hyperlink{structmy_game_1_1_data}{Data}}*\ \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}},\ SDL\_Renderer*\ r);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_main_menu_a63b9adbe3dbb2ccf201fb09fdf27722d}{\string~MainMenu}}()\ \{\}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_main_menu_a4c00f6979dc4817f8fbd0e681df787f0}{render}}(\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&,\ SDL\_Renderer*)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_main_menu_a9d4c9106c8455f3d87b29abd78afa52e}{act}}(Uint32)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Rect\ \mbox{\hyperlink{classmy_game_1_1_main_menu_a6385c72cbd9c4ef2b886f06cd30e68e0}{getRect}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Point\ \mbox{\hyperlink{classmy_game_1_1_main_menu_a054020f9fc5105dbd75beb0269a4449c}{getFocus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_map_afa0fa242fe99ed2067d857bd1eae4c5a}{Map}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}}\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ curLvl;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width,\ height;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}**\ tileNums;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ enemyCount;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ vector<Collide*>\ walls;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ vector<SDL\_Texture*>\ tiles;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ vector<Entity*>\ enemies;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_player}{Player}}*\ player;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\ winZone;}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ SDL\_Texture*\ deathScreen;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ SDL\_Texture*\ winScreen;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ SDL\_Texture*\ endGameTexture;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ endgame;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ Uint16\ alfa;}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classmy_game_1_1_map_ad982f056c7d557f7a61d11ae71518fdd}{error}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmy_game_1_1_map_af21d9919cb369c5b6632b74168f79c5c}{isError}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_map_afa0fa242fe99ed2067d857bd1eae4c5a}{Map}}(\mbox{\hyperlink{classmy_game_1_1_game}{Game}}*,\ \mbox{\hyperlink{structmy_game_1_1_data}{Data}}*,\ SDL\_Renderer*);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_map_a527dc65cb3ac89b9aafc17786dd0373a}{\string~Map}}();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_map_ab76049d40521a5fd29a0cd84670d36f9}{render}}(\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&,\ SDL\_Renderer*)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_map_a6254b002a716e67ead675d5922a90463}{act}}(Uint32)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Rect\ \mbox{\hyperlink{classmy_game_1_1_map_a89b54c081b0c37957244b3d526685c29}{getRect}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Point\ \mbox{\hyperlink{classmy_game_1_1_map_a53dd7aec754068f95f318851b8964388}{getFocus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loadTiles(\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}}*);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loadObjects(\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}}*,\ \mbox{\hyperlink{structmy_game_1_1_data}{Data}}*,\ SDL\_Renderer*);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loadTextures(SDL\_Renderer*,\ \mbox{\hyperlink{structmy_game_1_1_data}{Data}}*);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loadMapData();}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ nextLevel();}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ restart();}
+\DoxyCodeLine{00301\ \ \ \ \ \};}
+\DoxyCodeLine{00302\ \}}
+
+\end{DoxyCode}

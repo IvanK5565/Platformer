@@ -1,0 +1,95 @@
+\doxysection{Collide.\+h}
+\hypertarget{_collide_8h_source}{}\label{_collide_8h_source}\mbox{\hyperlink{_collide_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enums_8h}{Enums.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy_game}{myGame}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}};}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structmy_game_1_1_collision_info_afa26913843a001bb5e1116cfc6002729}{collision}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmy_game_1_1_collision_info_a0d5c9c8ac22ce8aae88520930a5ffde6}{x1}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmy_game_1_1_collision_info_a23c495772e1bb1284f967000eafe4a99}{x2}};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmy_game_1_1_collision_info_ac0e5a6bf7e208737115f399fcd79350e}{y1}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmy_game_1_1_collision_info_a880c061a9ab4605a7dd8b8ebd962083b}{y2}};\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structmy_game_1_1_collision_info_afa26913843a001bb5e1116cfc6002729}{collision}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}},\ \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}};\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}})\ :\ \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}}(\mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}}),\ \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}}(\mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}})\ \{\}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_collide_a74356b1d9ac7873da76f4df690c76585}{setPos}}(\textcolor{keywordtype}{int}\ newX,\ \textcolor{keywordtype}{int}\ newY);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_collide_a3a9428f246b392cbf7abd891c5106dd2}{\string~Collide}}()\ \{\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_collide_a5f9733de7e724b559179f53c6c786fdf}{checkCollision}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\&\ rect)\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_collide_a9a887f1668f75910fd0c7eee77824b37}{checkCollision}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_y)\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_collide_adc43e37494deb011b5ca30982182508f}{drawBorder}}(SDL\_Renderer*\ renderer,\ \mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&\ camera)\ =\ 0;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacemy_game_acbb2975143387b6f0ea2e384b8a9910a}{CollideType}}\ \mbox{\hyperlink{classmy_game_1_1_collide_ae32189b79a9b1bd29a9bc4bc93ef96c9}{getType}}()\ =\ 0;}
+\DoxyCodeLine{00082\ \ \ \ \ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_right_triangle_afb28b9ee7e7d7c53dc962ea112686e97}{RightTriangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_right_triangle_ac17ac5e8babb2eff650821c4151b0dbe}{SIDE}}\ =\ 32;\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_right_triangle_afb28b9ee7e7d7c53dc962ea112686e97}{RightTriangle}}(\textcolor{keywordtype}{int}\ \_x,\ \textcolor{keywordtype}{int}\ \_y)\ :\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}(\_x,\ \_y)\ \{\}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_right_triangle_a3fb74dc3c0585fea0d5e95da668f83c6}{\string~RightTriangle}}()\ \{\}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_right_triangle_ae01b191665e82abda45bcfad38c4cb14}{checkCollision}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_right_triangle_ae01b191665e82abda45bcfad38c4cb14}{checkCollision}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_right_triangle_afd63e6000f1b8721bf0816c02390047e}{drawBorder}}(SDL\_Renderer*,\ \mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacemy_game_acbb2975143387b6f0ea2e384b8a9910a}{CollideType}}\ \mbox{\hyperlink{classmy_game_1_1_right_triangle_a112e1b81c4702078c4669601e0f58135}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_left_triangle_a4e1f7b030da36e1ee4a613c6543e8cee}{LeftTriangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a7f05c73e77cda2cc5042857186fd66d4}{SIDE}}\ =\ 32;\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a4e1f7b030da36e1ee4a613c6543e8cee}{LeftTriangle}}(\textcolor{keywordtype}{int}\ \_x,\ \textcolor{keywordtype}{int}\ \_y)\ :\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}(\_x,\ \_y)\ \{\}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a7bbed31fc064bc1ef42d9743adcb034a}{\string~LeftTriangle}}()\ \{\}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a2801a71b447e3718d9cf6c3f42b2b580}{checkCollision}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a2801a71b447e3718d9cf6c3f42b2b580}{checkCollision}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a8b40c17080952b43830af5c2df853ce2}{drawBorder}}(SDL\_Renderer*,\ \mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacemy_game_acbb2975143387b6f0ea2e384b8a9910a}{CollideType}}\ \mbox{\hyperlink{classmy_game_1_1_left_triangle_a869b567b27e85823414341469f7b6b3f}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00126\ \ \ \ \ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_rectangle_a601cbb45d5d8b7526029de8c7b41493c}{Rectangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc}{width}},\ \mbox{\hyperlink{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2}{height}};\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_rectangle_a601cbb45d5d8b7526029de8c7b41493c}{Rectangle}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}},\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ :\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}(\mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}},\ \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}}),\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc}{width}}(w),\ \mbox{\hyperlink{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2}{height}}(h)\ \{\}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_rectangle_a2c9db7f0691577304a8755d8dc125bc9}{Rectangle}}(SDL\_Rect\ rect)\ :\ \mbox{\hyperlink{classmy_game_1_1_collide_a05d9983b00c68d395a385f3b11ef6c82}{Collide}}(rect.\mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}},\ rect.\mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}}),\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc}{width}}(rect.w),\ \mbox{\hyperlink{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2}{height}}(rect.h)\ \{\}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a38b7cfa6593ccf0ecf38c840f16c2af1}{\string~Rectangle}}()\ \{\}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a35a48e781a6716d481ee8aec72c243e6}{checkCollision}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structmy_game_1_1_collision_info}{CollisionInfo}}\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a35a48e781a6716d481ee8aec72c243e6}{checkCollision}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a76ac311b29a6c83107d2cba0251536a9}{drawBorder}}(SDL\_Renderer*,\ \mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacemy_game_acbb2975143387b6f0ea2e384b8a9910a}{CollideType}}\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a915e06e5ae040ca9b79b1ed9cd841625}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a57d8df0365f9165dc3890b9a9521abe0}{getRect}}()\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{classmy_game_1_1_collide_a11c88e361f30766509ee6010a648f96a}{x}},\ \mbox{\hyperlink{classmy_game_1_1_collide_a1d20ccf5e18b33944b5b37acb9d67c67}{y}},\ \mbox{\hyperlink{classmy_game_1_1_rectangle_a91a9bc390816c5dbfbbdadce573f9ddc}{width}},\ \mbox{\hyperlink{classmy_game_1_1_rectangle_ae5ea517276086a5a4a52d7cb7255e5e2}{height}}\ \};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_rectangle_a19d10af2934c79e843307bde3f1f82c2}{RightTriangle}};}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_rectangle_a0c0200792413eb2b8c508b417a5a19a7}{LeftTriangle}};}
+\DoxyCodeLine{00168\ \ \ \ \ \};}
+\DoxyCodeLine{00169\ \}}
+
+\end{DoxyCode}

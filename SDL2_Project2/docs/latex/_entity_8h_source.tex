@@ -1,0 +1,80 @@
+\doxysection{Entity.\+h}
+\hypertarget{_entity_8h_source}{}\label{_entity_8h_source}\mbox{\hyperlink{_entity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_drawable_8h}{Drawable.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enums_8h}{Enums.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy_game}{myGame}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}{Entity}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_drawable}{Drawable}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}},\ \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classmy_game_1_1_entity_a531cc060007dbe3992f4323b791a0617}{speedY}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_add761d6b51b814fcaa1c9b41da468f46}{health}},\ \mbox{\hyperlink{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}{damage}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ \mbox{\hyperlink{classmy_game_1_1_entity_afff2305dacea2dd689b04cac71ea8a74}{lookDir}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ \mbox{\hyperlink{classmy_game_1_1_entity_a7f321291a1e02aec44428009f8dae9a6}{hurtDir}};\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::map<States,\ State*>\ \mbox{\hyperlink{classmy_game_1_1_entity_a382aefc4cccc1a2024cb904a0f8bb44a}{states}};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}}\ \mbox{\hyperlink{classmy_game_1_1_entity_a051967a72c4a32c5e0211b900a01bf2d}{currentState}};\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::vector<Collide*>\&\ \mbox{\hyperlink{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}{walls}};\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\ \mbox{\hyperlink{classmy_game_1_1_entity_a9b25f86cfd981ccb0d9571b97a0c162a}{hitBox}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\ \mbox{\hyperlink{classmy_game_1_1_entity_a8d6363775299b79ad771711f16ecaac3}{attackBox}};\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_af630887c37f9236a10d87c7f7a561768}{GRAVITY}}\ =\ 600;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_ac431662516087a122f2d031168ae0dca}{MAXSPEEDY}}\ =\ 200;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_af4a0662f8a17b6a24e093688e80e1c6c}{MAXSPEEDX}}\ =\ 200;\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}{Entity}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}},\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ \mbox{\hyperlink{structmy_game_1_1_entity_data}{EntityData}}*\ data,\ std::vector<Collide*>\&\ \mbox{\hyperlink{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}{walls}},\ SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_entity_adda5a39d60058faf03dfd599dfffeddb}{\string~Entity}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classmy_game_1_1_entity_ad436ef9fecd354b06e2afa9bcdab0f5c}{getX}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classmy_game_1_1_entity_a15b6970194ee4b71c7468bc49e9cd715}{getY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classmy_game_1_1_entity_a384f149e0ccbaeff46a2b05dbe33a1ce}{getSpeedY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_a1508c631267b42e2260221005137f0ca}{setSpeedY}}(\textcolor{keywordtype}{float}\ speed);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ \mbox{\hyperlink{classmy_game_1_1_entity_abfb049c22cba7f4f452c9d5a66fbb1ae}{getLookDir}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ \mbox{\hyperlink{classmy_game_1_1_entity_ab268a2130635dc6786852b6b3ab73230}{getHurtDir}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmy_game_1_1_entity_a77a33e740920eb9463bf775b6cb92c8e}{isDead}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_ae31e37344f58bc18c953ecbfa06d7964}{setState}}(\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}}\ state);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_a9de43b98a473868ca8c5d22a7048ee37}{move}}(\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ dir,\ Uint32\ delay);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_ab8f71402379ba3efdd8759571a296bf1}{jump}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_a3c0a3a6022a1a8906891b32bf37ce0e6}{takeDamage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}{damage}},\ \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ dir);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_aa6352b3a299e804f282eea9d80a26075}{attack}}()\ =\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}}\&\ \mbox{\hyperlink{classmy_game_1_1_entity_a63bc32e3b4b7daf0b6a765c37f6edab5}{getHitBox}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmy_game_1_1_entity_a9b0525b849b28dd23af93408dc57b6af}{onGround}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_a3b04c8172c3b6a674bb4fdac1adab0c2}{collissionUpdate}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Rect\ \mbox{\hyperlink{classmy_game_1_1_entity_a2d5f3204eb117529366ad8d3d469dc55}{getRect}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ SDL\_Point\ \mbox{\hyperlink{classmy_game_1_1_entity_a990346b9603bd010ac67040ae872e2a5}{getFocus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_entity_a75237d599945277ae16a5723252137d3}{render}}(\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}}\&\ camera,\ SDL\_Renderer*\ renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_player_a3c322a8ce97647736fed614699de4272}{Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}{Entity}}\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::vector<Entity*>\&\ enemies;\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_a7ae5a47e2ada93acedcd0bd43ecad51da636da1d35e805b00eae0fcd8333f9234}{Player}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}},\ \mbox{\hyperlink{structmy_game_1_1_entity_data}{EntityData}}*\ data,\ std::vector<Collide*>\&\ ground,\ std::vector<Entity*>\&\ enemies,\ SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_player_aac1b3b84605c33887c9740745962d63d}{\string~Player}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_player_a8064bc121068b7dcb5a50408cd466232}{attack}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_player_ae721fb478f5eb948a06dd235965ecece}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00094\ \ \ \ \ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmy_game_1_1_enemy_ae5202b17dbf809222bd8b77739f4d7f7}{Enemy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}{Entity}}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmy_game_1_1_player}{Player}}*\ player;\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ targetSpotted;\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacemy_game_a7ae5a47e2ada93acedcd0bd43ecad51da8c6d21187fb58b7a079d70030686b33e}{Enemy}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}},\ \mbox{\hyperlink{structmy_game_1_1_entity_data}{EntityData}}*\ data,\ std::vector<Collide*>\&\ ground,\ \mbox{\hyperlink{classmy_game_1_1_player}{Player}}*\ player,\ SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_game_1_1_enemy_a6edfeed25ebadd5210c85ae341191eed}{\string~Enemy}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_aada23ede3836860c4f0f6e7436165d7a}{move}}(\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}\ dir,\ Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_acc8864178e871ddc04c6e775b8ceee85}{attack}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmy_game_1_1_enemy_a2d2415c64d8b64470fe01e6dd15a1845}{act}}(Uint32\ delay)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00123\ \ \ \ \ \};}
+\DoxyCodeLine{00124\ \}}
+
+\end{DoxyCode}

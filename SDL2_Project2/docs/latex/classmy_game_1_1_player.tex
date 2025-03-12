@@ -1,0 +1,190 @@
+\doxysection{my\+Game\+::Player Class Reference}
+\hypertarget{classmy_game_1_1_player}{}\label{classmy_game_1_1_player}\index{myGame::Player@{myGame::Player}}
+
+
+A class representing the player character.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmy_game_1_1_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_player_a3c322a8ce97647736fed614699de4272}{Player}} (int \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}}, int \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}}, \mbox{\hyperlink{structmy_game_1_1_entity_data}{Entity\+Data}} \texorpdfstring{$\ast$}{*}data, std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \&ground, std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_entity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ \&enemies, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classmy_game_1_1_player}{Player}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_player_aac1b3b84605c33887c9740745962d63d}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classmy_game_1_1_player}{Player}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_player_a8064bc121068b7dcb5a50408cd466232}{attack}} () override
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_player_ae721fb478f5eb948a06dd235965ecece}{act}} (Uint32 delay) override
+\begin{DoxyCompactList}\small\item\em Updates the object\textquotesingle{}s state based on the elapsed time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_entity}{my\+Game\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}{Entity}} (int \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}}, int \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}}, int w, int h, \mbox{\hyperlink{structmy_game_1_1_entity_data}{Entity\+Data}} \texorpdfstring{$\ast$}{*}data, std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}{walls}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Constructor for an entity. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_entity_adda5a39d60058faf03dfd599dfffeddb}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classmy_game_1_1_entity}{Entity}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_ad436ef9fecd354b06e2afa9bcdab0f5c}{getX}} () const
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a15b6970194ee4b71c7468bc49e9cd715}{getY}} () const
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a384f149e0ccbaeff46a2b05dbe33a1ce}{get\+SpeedY}} () const
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_a1508c631267b42e2260221005137f0ca}{set\+SpeedY}} (float speed)
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_abfb049c22cba7f4f452c9d5a66fbb1ae}{get\+Look\+Dir}} ()
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_ab268a2130635dc6786852b6b3ab73230}{get\+Hurt\+Dir}} ()
+\item 
+bool \mbox{\hyperlink{classmy_game_1_1_entity_a77a33e740920eb9463bf775b6cb92c8e}{is\+Dead}} ()
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_ae31e37344f58bc18c953ecbfa06d7964}{set\+State}} (\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}} state)
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_entity_a9de43b98a473868ca8c5d22a7048ee37}{move}} (\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} dir, Uint32 delay)
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_ab8f71402379ba3efdd8759571a296bf1}{jump}} ()
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_a3c0a3a6022a1a8906891b32bf37ce0e6}{take\+Damage}} (int \mbox{\hyperlink{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}{damage}}, \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} dir)
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \& \mbox{\hyperlink{classmy_game_1_1_entity_a63bc32e3b4b7daf0b6a765c37f6edab5}{get\+Hit\+Box}} ()
+\item 
+bool \mbox{\hyperlink{classmy_game_1_1_entity_a9b0525b849b28dd23af93408dc57b6af}{on\+Ground}} ()
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_a3b04c8172c3b6a674bb4fdac1adab0c2}{collission\+Update}} ()
+\item 
+virtual SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_entity_a2d5f3204eb117529366ad8d3d469dc55}{get\+Rect}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s bounding rectangle. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Point \mbox{\hyperlink{classmy_game_1_1_entity_a990346b9603bd010ac67040ae872e2a5}{get\+Focus}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the focus point of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_entity_a75237d599945277ae16a5723252137d3}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&camera, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer) override
+\begin{DoxyCompactList}\small\item\em Renders the object using the provided camera and renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_drawable}{my\+Game\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classmy_game_1_1_entity}{my\+Game\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classmy_game_1_1_entity_af630887c37f9236a10d87c7f7a561768}{GRAVITY}} = 600
+\item 
+static const int \mbox{\hyperlink{classmy_game_1_1_entity_ac431662516087a122f2d031168ae0dca}{MAXSPEEDY}} = 200
+\item 
+static const int \mbox{\hyperlink{classmy_game_1_1_entity_af4a0662f8a17b6a24e093688e80e1c6c}{MAXSPEEDX}} = 200
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmy_game_1_1_entity}{my\+Game\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}}
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}}
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a531cc060007dbe3992f4323b791a0617}{speedY}}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_entity_add761d6b51b814fcaa1c9b41da468f46}{health}}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}{damage}}
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_afff2305dacea2dd689b04cac71ea8a74}{look\+Dir}}
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_a7f321291a1e02aec44428009f8dae9a6}{hurt\+Dir}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}}, \mbox{\hyperlink{classmy_game_1_1_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classmy_game_1_1_entity_a382aefc4cccc1a2024cb904a0f8bb44a}{states}}
+\item 
+\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}} \mbox{\hyperlink{classmy_game_1_1_entity_a051967a72c4a32c5e0211b900a01bf2d}{current\+State}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}{walls}}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \mbox{\hyperlink{classmy_game_1_1_entity_a9b25f86cfd981ccb0d9571b97a0c162a}{hit\+Box}}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \mbox{\hyperlink{classmy_game_1_1_entity_a8d6363775299b79ad771711f16ecaac3}{attack\+Box}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing the player character. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_player_a3c322a8ce97647736fed614699de4272}\index{myGame::Player@{myGame::Player}!Player@{Player}}
+\index{Player@{Player}!myGame::Player@{myGame::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_player_a3c322a8ce97647736fed614699de4272} 
+my\+Game\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{\mbox{\hyperlink{structmy_game_1_1_entity_data}{Entity\+Data}} \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \&}]{ground}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_entity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ \&}]{enemies}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classmy_game_1_1_player}{Player}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position. \\
+\hline
+{\em y} & Y position. \\
+\hline
+{\em data} & \doxylink{classmy_game_1_1_entity}{Entity} data. \\
+\hline
+{\em ground} & Reference to ground colliders. \\
+\hline
+{\em enemies} & Reference to enemy entities. \\
+\hline
+{\em renderer} & SDL renderer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_player_aac1b3b84605c33887c9740745962d63d}\index{myGame::Player@{myGame::Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
+\index{````~Player@{\texorpdfstring{$\sim$}{\string~}Player}!myGame::Player@{myGame::Player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Player()}{\string~Player()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_player_aac1b3b84605c33887c9740745962d63d} 
+my\+Game\+::\+Player\+::\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for \doxylink{classmy_game_1_1_player}{Player}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_player_ae721fb478f5eb948a06dd235965ecece}\index{myGame::Player@{myGame::Player}!act@{act}}
+\index{act@{act}!myGame::Player@{myGame::Player}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_player_ae721fb478f5eb948a06dd235965ecece} 
+void my\+Game\+::\+Player\+::act (\begin{DoxyParamCaption}\item[{Uint32}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the object\textquotesingle{}s state based on the elapsed time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last update. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_player_a8064bc121068b7dcb5a50408cd466232}\index{myGame::Player@{myGame::Player}!attack@{attack}}
+\index{attack@{attack}!myGame::Player@{myGame::Player}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_player_a8064bc121068b7dcb5a50408cd466232} 
+void my\+Game\+::\+Player\+::attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_entity_aa6352b3a299e804f282eea9d80a26075}{my\+Game\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

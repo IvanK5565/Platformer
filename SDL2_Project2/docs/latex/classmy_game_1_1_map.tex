@@ -1,0 +1,202 @@
+\doxysection{my\+Game\+::Map Class Reference}
+\hypertarget{classmy_game_1_1_map}{}\label{classmy_game_1_1_map}\index{myGame::Map@{myGame::Map}}
+
+
+Represents the game map screen.  
+
+
+
+
+{\ttfamily \#include $<$Screens.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmy_game_1_1_map}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_map_afa0fa242fe99ed2067d857bd1eae4c5a}{Map}} (\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the map screen. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_map_a527dc65cb3ac89b9aafc17786dd0373a}{\texorpdfstring{$\sim$}{\string~}\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleaning up map resources. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_map_ab76049d40521a5fd29a0cd84670d36f9}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}) override
+\begin{DoxyCompactList}\small\item\em Renders the map on the screen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_map_a6254b002a716e67ead675d5922a90463}{act}} (Uint32) override
+\begin{DoxyCompactList}\small\item\em Handles the game logic for the map, including enemy actions and player movement. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_map_a89b54c081b0c37957244b3d526685c29}{get\+Rect}} () override
+\begin{DoxyCompactList}\small\item\em Gets the rectangle representing the map screen. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Point \mbox{\hyperlink{classmy_game_1_1_map_a53dd7aec754068f95f318851b8964388}{get\+Focus}} () override
+\begin{DoxyCompactList}\small\item\em Gets the point that defines the focus of the map screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_drawable}{my\+Game\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classmy_game_1_1_map_ad982f056c7d557f7a61d11ae71518fdd}{error}}
+\begin{DoxyCompactList}\small\item\em Error message for loading the map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy_game_1_1_map_af21d9919cb369c5b6632b74168f79c5c}{is\+Error}}
+\begin{DoxyCompactList}\small\item\em Boolean indicating if there is an error loading the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_screen}{my\+Game\+::\+Screen}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_screen_a91ea4ffa2c1ded8145f99ff04db3ea7e}{Screen}} (\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}\+\_\+game, \mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}r)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the screen with the game, data, and renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmy_game_1_1_screen}{my\+Game\+::\+Screen}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_a6b3ff4605918d1a80f9ff74d2d04858d}{game}}
+\begin{DoxyCompactList}\small\item\em Pointer to the main game object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_a4fefe5d024b8456ebb752f81f48ed6e2}{data}}
+\begin{DoxyCompactList}\small\item\em Pointer to the data object that holds game-\/related data. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_screen_af571a5656c247e4543cf1640a7e456a1}{renderer}}
+\begin{DoxyCompactList}\small\item\em The renderer used to draw graphics on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the game map screen. 
+
+This class is responsible for rendering the game map, handling tile data, managing enemies, and processing game events such as winning or losing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_map_afa0fa242fe99ed2067d857bd1eae4c5a}\index{myGame::Map@{myGame::Map}!Map@{Map}}
+\index{Map@{Map}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_afa0fa242fe99ed2067d857bd1eae4c5a} 
+my\+Game\+::\+Map\+::\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_game}{Game}} \texorpdfstring{$\ast$}{*}}]{game}{, }\item[{\mbox{\hyperlink{structmy_game_1_1_data}{Data}} \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for initializing the map screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Pointer to the game object. \\
+\hline
+{\em data} & Pointer to the data object. \\
+\hline
+{\em r} & Renderer used for rendering the screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_map_a527dc65cb3ac89b9aafc17786dd0373a}\index{myGame::Map@{myGame::Map}!````~Map@{\texorpdfstring{$\sim$}{\string~}Map}}
+\index{````~Map@{\texorpdfstring{$\sim$}{\string~}Map}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Map()}{\string~Map()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_a527dc65cb3ac89b9aafc17786dd0373a} 
+my\+Game\+::\+Map\+::\texorpdfstring{$\sim$}{\string~}\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for cleaning up map resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_map_a6254b002a716e67ead675d5922a90463}\index{myGame::Map@{myGame::Map}!act@{act}}
+\index{act@{act}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_a6254b002a716e67ead675d5922a90463} 
+void my\+Game\+::\+Map\+::act (\begin{DoxyParamCaption}\item[{Uint32}]{delay}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the game logic for the map, including enemy actions and player movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & The delay between frames to control the update rate. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_map_a53dd7aec754068f95f318851b8964388}\index{myGame::Map@{myGame::Map}!getFocus@{getFocus}}
+\index{getFocus@{getFocus}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{getFocus()}{getFocus()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_a53dd7aec754068f95f318851b8964388} 
+SDL\+\_\+\+Point my\+Game\+::\+Map\+::get\+Focus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the point that defines the focus of the map screen. 
+
+\begin{DoxyReturn}{Returns}
+The point that represents the focus of the screen. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_map_a89b54c081b0c37957244b3d526685c29}\index{myGame::Map@{myGame::Map}!getRect@{getRect}}
+\index{getRect@{getRect}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_a89b54c081b0c37957244b3d526685c29} 
+SDL\+\_\+\+Rect my\+Game\+::\+Map\+::get\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the rectangle representing the map screen. 
+
+\begin{DoxyReturn}{Returns}
+The rectangle representing the screen area. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_map_ab76049d40521a5fd29a0cd84670d36f9}\index{myGame::Map@{myGame::Map}!render@{render}}
+\index{render@{render}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_ab76049d40521a5fd29a0cd84670d36f9} 
+void my\+Game\+::\+Map\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&}]{camera}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the map on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera object to handle viewport rendering. \\
+\hline
+{\em renderer} & The SDL renderer to draw textures. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}{my\+Game\+::\+Drawable}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmy_game_1_1_map_ad982f056c7d557f7a61d11ae71518fdd}\index{myGame::Map@{myGame::Map}!error@{error}}
+\index{error@{error}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_ad982f056c7d557f7a61d11ae71518fdd} 
+string my\+Game\+::\+Map\+::error}
+
+
+
+Error message for loading the map. 
+
+\Hypertarget{classmy_game_1_1_map_af21d9919cb369c5b6632b74168f79c5c}\index{myGame::Map@{myGame::Map}!isError@{isError}}
+\index{isError@{isError}!myGame::Map@{myGame::Map}}
+\doxysubsubsection{\texorpdfstring{isError}{isError}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_map_af21d9919cb369c5b6632b74168f79c5c} 
+bool my\+Game\+::\+Map\+::is\+Error}
+
+
+
+Boolean indicating if there is an error loading the map. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_screens_8h}{Screens.\+h}}\item 
+\mbox{\hyperlink{_screens_8cpp}{Screens.\+cpp}}\end{DoxyCompactItemize}

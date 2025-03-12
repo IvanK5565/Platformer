@@ -1,0 +1,226 @@
+\doxysection{my\+Game\+::Game Class Reference}
+\hypertarget{classmy_game_1_1_game}{}\label{classmy_game_1_1_game}\index{myGame::Game@{myGame::Game}}
+
+
+The main class that represents the game, managing window, rendering, and game states.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_game_a1fd759fbd200f9c3e8edd1e505017704}{Game}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the game with specific screen width and height. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_game_a7040d1141c7bd0937ab4e4270b52834f}{load\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Loads the main menu screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_game_a9b527abe4b480f4ebb006f045714aada}{set\+New\+Screen}} (\mbox{\hyperlink{classmy_game_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*}scr)
+\begin{DoxyCompactList}\small\item\em Sets a new screen for the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_game_af898f15b2e552964c91f4916b2481b58}{act}} (Uint32 delay)
+\begin{DoxyCompactList}\small\item\em Main game loop that handles game updates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_game_a17fd119d40bc4dc47c573d39092f7fee}{handle\+Event}} (SDL\+\_\+\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handles SDL events (e.\+g., keyboard, mouse, etc.). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_game_a3748cb00e8fafd42bcf6cee30635611e}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the game content on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmy_game_1_1_game_abd0d7c76fdaf9789e66f29b5099ea3b4}{quit}} ()
+\begin{DoxyCompactList}\small\item\em Exits the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{classmy_game_1_1_game_a8468ac71fcc8b91da57b3397707bad93}{SCREEN\+\_\+\+WIDTH}}
+\begin{DoxyCompactList}\small\item\em The width of the screen. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classmy_game_1_1_game_ae125d7a643e3479d3ccc219c7539f499}{SCREEN\+\_\+\+HEIGHT}}
+\item 
+const int \mbox{\hyperlink{classmy_game_1_1_game_a5d5cea026da350160e3de12350355655}{GAME\+\_\+\+WIDTH}}
+\begin{DoxyCompactList}\small\item\em The game width (resolution for the game). \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classmy_game_1_1_game_ae5376129a680d0ce638bb5155c0c28cb}{GAME\+\_\+\+HEIGHT}}
+\item 
+const int \mbox{\hyperlink{classmy_game_1_1_game_ab71a9b44f65bcb3839dd6b3afbee018f}{CAMERA\+\_\+\+WIDTH}}
+\begin{DoxyCompactList}\small\item\em The width of the camera\textquotesingle{}s viewport. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classmy_game_1_1_game_a30b749e572ea1a19f1dfb9fea9a9eb5e}{CAMERA\+\_\+\+HEIGHT}}
+\item 
+bool \mbox{\hyperlink{classmy_game_1_1_game_a90725b798c0e6f28a9b027258e0af557}{\+\_\+quit}}
+\begin{DoxyCompactList}\small\item\em Boolean indicating if the game should quit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class that represents the game, managing window, rendering, and game states. 
+
+This class is responsible for initializing the game, managing the screen, handling events, rendering content, and controlling the game flow. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_game_a1fd759fbd200f9c3e8edd1e505017704}\index{myGame::Game@{myGame::Game}!Game@{Game}}
+\index{Game@{Game}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a1fd759fbd200f9c3e8edd1e505017704} 
+my\+Game\+::\+Game\+::\+Game (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for initializing the game with specific screen width and height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the screen. \\
+\hline
+{\em height} & The height of the screen. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_game_af898f15b2e552964c91f4916b2481b58}\index{myGame::Game@{myGame::Game}!act@{act}}
+\index{act@{act}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_af898f15b2e552964c91f4916b2481b58} 
+void my\+Game\+::\+Game\+::act (\begin{DoxyParamCaption}\item[{Uint32}]{delay}{}\end{DoxyParamCaption})}
+
+
+
+Main game loop that handles game updates. 
+
+This method handles the game logic, updates, and events for each frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & Time delay between frames to control the game\textquotesingle{}s frame rate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_game_a17fd119d40bc4dc47c573d39092f7fee}\index{myGame::Game@{myGame::Game}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a17fd119d40bc4dc47c573d39092f7fee} 
+void my\+Game\+::\+Game\+::handle\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Handles SDL events (e.\+g., keyboard, mouse, etc.). 
+
+This method processes user input events such as key presses and mouse movements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & SDL event to be processed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_game_a7040d1141c7bd0937ab4e4270b52834f}\index{myGame::Game@{myGame::Game}!loadMainMenu@{loadMainMenu}}
+\index{loadMainMenu@{loadMainMenu}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{loadMainMenu()}{loadMainMenu()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a7040d1141c7bd0937ab4e4270b52834f} 
+void my\+Game\+::\+Game\+::load\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Loads the main menu screen. 
+
+This method initializes and loads the assets for the main menu. \Hypertarget{classmy_game_1_1_game_abd0d7c76fdaf9789e66f29b5099ea3b4}\index{myGame::Game@{myGame::Game}!quit@{quit}}
+\index{quit@{quit}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_abd0d7c76fdaf9789e66f29b5099ea3b4} 
+int my\+Game\+::\+Game\+::quit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Exits the game. 
+
+This method handles the quit process, including cleanup and shutdown.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the exit code. 
+\end{DoxyReturn}
+\Hypertarget{classmy_game_1_1_game_a3748cb00e8fafd42bcf6cee30635611e}\index{myGame::Game@{myGame::Game}!render@{render}}
+\index{render@{render}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a3748cb00e8fafd42bcf6cee30635611e} 
+void my\+Game\+::\+Game\+::render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renders the game content on the screen. 
+
+This method renders the game\textquotesingle{}s graphics, including textures and UI elements. \Hypertarget{classmy_game_1_1_game_a9b527abe4b480f4ebb006f045714aada}\index{myGame::Game@{myGame::Game}!setNewScreen@{setNewScreen}}
+\index{setNewScreen@{setNewScreen}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{setNewScreen()}{setNewScreen()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a9b527abe4b480f4ebb006f045714aada} 
+void my\+Game\+::\+Game\+::set\+New\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_screen}{Screen}} \texorpdfstring{$\ast$}{*}}]{scr}{}\end{DoxyParamCaption})}
+
+
+
+Sets a new screen for the game. 
+
+This method sets the given screen as the active screen in the game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scr} & Pointer to the new screen object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmy_game_1_1_game_a90725b798c0e6f28a9b027258e0af557}\index{myGame::Game@{myGame::Game}!\_quit@{\_quit}}
+\index{\_quit@{\_quit}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{\_quit}{\_quit}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a90725b798c0e6f28a9b027258e0af557} 
+bool my\+Game\+::\+Game\+::\+\_\+quit}
+
+
+
+Boolean indicating if the game should quit. 
+
+\Hypertarget{classmy_game_1_1_game_a30b749e572ea1a19f1dfb9fea9a9eb5e}\index{myGame::Game@{myGame::Game}!CAMERA\_HEIGHT@{CAMERA\_HEIGHT}}
+\index{CAMERA\_HEIGHT@{CAMERA\_HEIGHT}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{CAMERA\_HEIGHT}{CAMERA\_HEIGHT}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a30b749e572ea1a19f1dfb9fea9a9eb5e} 
+const int my\+Game\+::\+Game\+::\+CAMERA\+\_\+\+HEIGHT}
+
+\Hypertarget{classmy_game_1_1_game_ab71a9b44f65bcb3839dd6b3afbee018f}\index{myGame::Game@{myGame::Game}!CAMERA\_WIDTH@{CAMERA\_WIDTH}}
+\index{CAMERA\_WIDTH@{CAMERA\_WIDTH}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{CAMERA\_WIDTH}{CAMERA\_WIDTH}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_ab71a9b44f65bcb3839dd6b3afbee018f} 
+const int my\+Game\+::\+Game\+::\+CAMERA\+\_\+\+WIDTH}
+
+
+
+The width of the camera\textquotesingle{}s viewport. 
+
+\Hypertarget{classmy_game_1_1_game_ae5376129a680d0ce638bb5155c0c28cb}\index{myGame::Game@{myGame::Game}!GAME\_HEIGHT@{GAME\_HEIGHT}}
+\index{GAME\_HEIGHT@{GAME\_HEIGHT}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{GAME\_HEIGHT}{GAME\_HEIGHT}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_ae5376129a680d0ce638bb5155c0c28cb} 
+const int my\+Game\+::\+Game\+::\+GAME\+\_\+\+HEIGHT}
+
+\Hypertarget{classmy_game_1_1_game_a5d5cea026da350160e3de12350355655}\index{myGame::Game@{myGame::Game}!GAME\_WIDTH@{GAME\_WIDTH}}
+\index{GAME\_WIDTH@{GAME\_WIDTH}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{GAME\_WIDTH}{GAME\_WIDTH}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a5d5cea026da350160e3de12350355655} 
+const int my\+Game\+::\+Game\+::\+GAME\+\_\+\+WIDTH}
+
+
+
+The game width (resolution for the game). 
+
+\Hypertarget{classmy_game_1_1_game_ae125d7a643e3479d3ccc219c7539f499}\index{myGame::Game@{myGame::Game}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_ae125d7a643e3479d3ccc219c7539f499} 
+const int my\+Game\+::\+Game\+::\+SCREEN\+\_\+\+HEIGHT}
+
+\Hypertarget{classmy_game_1_1_game_a8468ac71fcc8b91da57b3397707bad93}\index{myGame::Game@{myGame::Game}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!myGame::Game@{myGame::Game}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_game_a8468ac71fcc8b91da57b3397707bad93} 
+const int my\+Game\+::\+Game\+::\+SCREEN\+\_\+\+WIDTH}
+
+
+
+The width of the screen. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,128 @@
+\doxysection{my\+Game\+::Death\+State Class Reference}
+\hypertarget{classmy_game_1_1_death_state}{}\label{classmy_game_1_1_death_state}\index{myGame::DeathState@{myGame::DeathState}}
+
+
+Represents the death state of the player.  
+
+
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Death\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmy_game_1_1_death_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_death_state_a6aef1f3130dbf5636973ade0ffe59432}{Death\+State}} (\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}}, int \+\_\+w, int \+\_\+h, \mbox{\hyperlink{structmy_game_1_1_state_data}{State\+Data}} \texorpdfstring{$\ast$}{*}data, string type, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the death state of the player. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_death_state_aeecf0479ea56e037ab8d053556cbf491}{act}} (Uint32 delay) override
+\begin{DoxyCompactList}\small\item\em Executes the death state logic (e.\+g., updating the death animation). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_death_state_aef6be26486899d7efd3ccf7d0d39743d}{\texorpdfstring{$\sim$}{\string~}\+Death\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_state}{my\+Game\+::\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_state_aac4dc804fffa4c742e70b0f6283a3e26}{State}} (\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}} \texorpdfstring{$\ast$}{*}e, int \+\_\+w, int \+\_\+h, \mbox{\hyperlink{structmy_game_1_1_state_data}{State\+Data}} \texorpdfstring{$\ast$}{*}data, string type, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}r)
+\begin{DoxyCompactList}\small\item\em Constructor for initializing the state with the entity, dimensions, data, type, and renderer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_state_a00e1f84cd13a8903829c670dae3f0f81}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the state to its initial conditions (e.\+g., resets animation frames). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_game_1_1_state_a07b7116f635ab3c736963197a9b8edcb}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&camera, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Renders the state (e.\+g., draws the current frame of the sprite). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy_game_1_1_state_ac3f67f01e4beecf824bc64d3c3335b36}{is\+Last\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the current frame is the last frame of the animation. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_state_a720672c4609a5f6dde94e4f607418c21}{\texorpdfstring{$\sim$}{\string~}\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to clean up any allocated resources for the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmy_game_1_1_state}{my\+Game\+::\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_state_aed0b320ceeaa4fff57440fba52079bf2}{w}}
+\begin{DoxyCompactList}\small\item\em The width and height of the state (e.\+g., sprite size). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmy_game_1_1_state_abeecc063f038635f88f24ff2d8ffee51}{h}}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmy_game_1_1_state_a8f48432fc64259bcd47f2f3f45689438}{entity}}
+\begin{DoxyCompactList}\small\item\em The entity this state belongs to. \end{DoxyCompactList}\item 
+vector$<$ SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classmy_game_1_1_state_a397e6830ddcd0182828d94df1ffffdd6}{frames}}
+\begin{DoxyCompactList}\small\item\em A vector of textures for each frame in the animation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmy_game_1_1_state_a45e056201a1a22e2d2d183308b68ae7c}{current\+Frame}}
+\begin{DoxyCompactList}\small\item\em The index of the current frame in the animation. \end{DoxyCompactList}\item 
+Uint32 \mbox{\hyperlink{classmy_game_1_1_state_a19351c5fa7e7349e4a06d80ad98e12fe}{timer}}
+\begin{DoxyCompactList}\small\item\em Timer for controlling the frame rate of the animation. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Renderer\+Flip \mbox{\hyperlink{classmy_game_1_1_state_a08f0d25267d2f2955d3997c303b3d534}{flip}}
+\begin{DoxyCompactList}\small\item\em \doxylink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction} for flipping the sprite (used for mirroring the sprite). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the death state of the player. 
+
+In this state, the player is dead and may play a death animation or trigger game over. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_death_state_a6aef1f3130dbf5636973ade0ffe59432}\index{myGame::DeathState@{myGame::DeathState}!DeathState@{DeathState}}
+\index{DeathState@{DeathState}!myGame::DeathState@{myGame::DeathState}}
+\doxysubsubsection{\texorpdfstring{DeathState()}{DeathState()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_death_state_a6aef1f3130dbf5636973ade0ffe59432} 
+my\+Game\+::\+Death\+State\+::\+Death\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_entity}{Entity}} \texorpdfstring{$\ast$}{*}}]{entity}{, }\item[{int}]{\+\_\+w}{, }\item[{int}]{\+\_\+h}{, }\item[{\mbox{\hyperlink{structmy_game_1_1_state_data}{State\+Data}} \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{string}]{type}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for initializing the death state of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Pointer to the player entity. \\
+\hline
+{\em \+\_\+w} & The width of the sprite. \\
+\hline
+{\em \+\_\+h} & The height of the sprite. \\
+\hline
+{\em data} & The state data containing the animation details. \\
+\hline
+{\em type} & The type of the state ("{}\+Death"{}). \\
+\hline
+{\em renderer} & The renderer for drawing textures. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_death_state_aef6be26486899d7efd3ccf7d0d39743d}\index{myGame::DeathState@{myGame::DeathState}!````~DeathState@{\texorpdfstring{$\sim$}{\string~}DeathState}}
+\index{````~DeathState@{\texorpdfstring{$\sim$}{\string~}DeathState}!myGame::DeathState@{myGame::DeathState}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DeathState()}{\string~DeathState()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_death_state_aef6be26486899d7efd3ccf7d0d39743d} 
+virtual my\+Game\+::\+Death\+State\+::\texorpdfstring{$\sim$}{\string~}\+Death\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for cleaning up resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_death_state_aeecf0479ea56e037ab8d053556cbf491}\index{myGame::DeathState@{myGame::DeathState}!act@{act}}
+\index{act@{act}!myGame::DeathState@{myGame::DeathState}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_death_state_aeecf0479ea56e037ab8d053556cbf491} 
+void my\+Game\+::\+Death\+State\+::act (\begin{DoxyParamCaption}\item[{Uint32}]{delay}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the death state logic (e.\+g., updating the death animation). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & The delay between frames. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classmy_game_1_1_state_a6c284ace354a2e1f2e4738bcc3035d53}{my\+Game\+::\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_state_8h}{State.\+h}}\item 
+\mbox{\hyperlink{_state_8cpp}{State.\+cpp}}\end{DoxyCompactItemize}

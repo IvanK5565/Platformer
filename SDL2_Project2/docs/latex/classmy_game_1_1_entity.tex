@@ -1,0 +1,401 @@
+\doxysection{my\+Game\+::Entity Class Reference}
+\hypertarget{classmy_game_1_1_entity}{}\label{classmy_game_1_1_entity}\index{myGame::Entity@{myGame::Entity}}
+
+
+A base class representing all game entities.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+Inheritance diagram for my\+Game\+::Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmy_game_1_1_entity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}{Entity}} (int \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}}, int \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}}, int w, int h, \mbox{\hyperlink{structmy_game_1_1_entity_data}{Entity\+Data}} \texorpdfstring{$\ast$}{*}data, std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}{walls}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Constructor for an entity. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_entity_adda5a39d60058faf03dfd599dfffeddb}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classmy_game_1_1_entity}{Entity}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_ad436ef9fecd354b06e2afa9bcdab0f5c}{getX}} () const
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a15b6970194ee4b71c7468bc49e9cd715}{getY}} () const
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a384f149e0ccbaeff46a2b05dbe33a1ce}{get\+SpeedY}} () const
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_a1508c631267b42e2260221005137f0ca}{set\+SpeedY}} (float speed)
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_abfb049c22cba7f4f452c9d5a66fbb1ae}{get\+Look\+Dir}} ()
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_ab268a2130635dc6786852b6b3ab73230}{get\+Hurt\+Dir}} ()
+\item 
+bool \mbox{\hyperlink{classmy_game_1_1_entity_a77a33e740920eb9463bf775b6cb92c8e}{is\+Dead}} ()
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_ae31e37344f58bc18c953ecbfa06d7964}{set\+State}} (\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}} state)
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_entity_a9de43b98a473868ca8c5d22a7048ee37}{move}} (\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} dir, Uint32 delay)
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_ab8f71402379ba3efdd8759571a296bf1}{jump}} ()
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_a3c0a3a6022a1a8906891b32bf37ce0e6}{take\+Damage}} (int \mbox{\hyperlink{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}{damage}}, \mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} dir)
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_entity_aa6352b3a299e804f282eea9d80a26075}{attack}} ()=0
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \& \mbox{\hyperlink{classmy_game_1_1_entity_a63bc32e3b4b7daf0b6a765c37f6edab5}{get\+Hit\+Box}} ()
+\item 
+bool \mbox{\hyperlink{classmy_game_1_1_entity_a9b0525b849b28dd23af93408dc57b6af}{on\+Ground}} ()
+\item 
+void \mbox{\hyperlink{classmy_game_1_1_entity_a3b04c8172c3b6a674bb4fdac1adab0c2}{collission\+Update}} ()
+\item 
+virtual SDL\+\_\+\+Rect \mbox{\hyperlink{classmy_game_1_1_entity_a2d5f3204eb117529366ad8d3d469dc55}{get\+Rect}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s bounding rectangle. \end{DoxyCompactList}\item 
+virtual SDL\+\_\+\+Point \mbox{\hyperlink{classmy_game_1_1_entity_a990346b9603bd010ac67040ae872e2a5}{get\+Focus}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the focus point of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_entity_a75237d599945277ae16a5723252137d3}{render}} (\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&camera, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer) override
+\begin{DoxyCompactList}\small\item\em Renders the object using the provided camera and renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmy_game_1_1_drawable}{my\+Game\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmy_game_1_1_drawable_a2970297e7da083c397103c8895f0b787}{act}} (Uint32 delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates the object\textquotesingle{}s state based on the elapsed time. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classmy_game_1_1_drawable_afc465b36b4cfed36b479fe45e918db81}{\texorpdfstring{$\sim$}{\string~}\+Drawable}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classmy_game_1_1_entity_af630887c37f9236a10d87c7f7a561768}{GRAVITY}} = 600
+\item 
+static const int \mbox{\hyperlink{classmy_game_1_1_entity_ac431662516087a122f2d031168ae0dca}{MAXSPEEDY}} = 200
+\item 
+static const int \mbox{\hyperlink{classmy_game_1_1_entity_af4a0662f8a17b6a24e093688e80e1c6c}{MAXSPEEDX}} = 200
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}{x}}
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}{y}}
+\item 
+float \mbox{\hyperlink{classmy_game_1_1_entity_a531cc060007dbe3992f4323b791a0617}{speedY}}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_entity_add761d6b51b814fcaa1c9b41da468f46}{health}}
+\item 
+int \mbox{\hyperlink{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}{damage}}
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_afff2305dacea2dd689b04cac71ea8a74}{look\+Dir}}
+\item 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} \mbox{\hyperlink{classmy_game_1_1_entity_a7f321291a1e02aec44428009f8dae9a6}{hurt\+Dir}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}}, \mbox{\hyperlink{classmy_game_1_1_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classmy_game_1_1_entity_a382aefc4cccc1a2024cb904a0f8bb44a}{states}}
+\item 
+\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}} \mbox{\hyperlink{classmy_game_1_1_entity_a051967a72c4a32c5e0211b900a01bf2d}{current\+State}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}{walls}}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \mbox{\hyperlink{classmy_game_1_1_entity_a9b25f86cfd981ccb0d9571b97a0c162a}{hit\+Box}}
+\item 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \mbox{\hyperlink{classmy_game_1_1_entity_a8d6363775299b79ad771711f16ecaac3}{attack\+Box}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A base class representing all game entities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e}\index{myGame::Entity@{myGame::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a432f46b538bb117d65acead12a19b93e} 
+my\+Game\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{, }\item[{\mbox{\hyperlink{structmy_game_1_1_entity_data}{Entity\+Data}} \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classmy_game_1_1_collide}{Collide}} \texorpdfstring{$\ast$}{*} $>$ \&}]{walls}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position. \\
+\hline
+{\em y} & Y position. \\
+\hline
+{\em w} & Width. \\
+\hline
+{\em h} & Height. \\
+\hline
+{\em data} & \doxylink{classmy_game_1_1_entity}{Entity} data. \\
+\hline
+{\em walls} & Reference to collidable objects. \\
+\hline
+{\em renderer} & SDL renderer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmy_game_1_1_entity_adda5a39d60058faf03dfd599dfffeddb}\index{myGame::Entity@{myGame::Entity}!````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}}
+\index{````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Entity()}{\string~Entity()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_adda5a39d60058faf03dfd599dfffeddb} 
+my\+Game\+::\+Entity\+::\texorpdfstring{$\sim$}{\string~}\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for \doxylink{classmy_game_1_1_entity}{Entity}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmy_game_1_1_entity_aa6352b3a299e804f282eea9d80a26075}\index{myGame::Entity@{myGame::Entity}!attack@{attack}}
+\index{attack@{attack}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_aa6352b3a299e804f282eea9d80a26075} 
+virtual void my\+Game\+::\+Entity\+::attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmy_game_1_1_enemy_acc8864178e871ddc04c6e775b8ceee85}{my\+Game\+::\+Enemy}}, and \mbox{\hyperlink{classmy_game_1_1_player_a8064bc121068b7dcb5a50408cd466232}{my\+Game\+::\+Player}}.
+
+\Hypertarget{classmy_game_1_1_entity_a3b04c8172c3b6a674bb4fdac1adab0c2}\index{myGame::Entity@{myGame::Entity}!collissionUpdate@{collissionUpdate}}
+\index{collissionUpdate@{collissionUpdate}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{collissionUpdate()}{collissionUpdate()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a3b04c8172c3b6a674bb4fdac1adab0c2} 
+void my\+Game\+::\+Entity\+::collission\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_a990346b9603bd010ac67040ae872e2a5}\index{myGame::Entity@{myGame::Entity}!getFocus@{getFocus}}
+\index{getFocus@{getFocus}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getFocus()}{getFocus()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a990346b9603bd010ac67040ae872e2a5} 
+SDL\+\_\+\+Point my\+Game\+::\+Entity\+::get\+Focus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the focus point of the object. 
+
+\begin{DoxyReturn}{Returns}
+The SDL\+\_\+\+Point representing the focus position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_aa32aade13c6e20e9b5ac8ec3e7eab0cd}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_entity_a63bc32e3b4b7daf0b6a765c37f6edab5}\index{myGame::Entity@{myGame::Entity}!getHitBox@{getHitBox}}
+\index{getHitBox@{getHitBox}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getHitBox()}{getHitBox()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a63bc32e3b4b7daf0b6a765c37f6edab5} 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} \& my\+Game\+::\+Entity\+::get\+Hit\+Box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_ab268a2130635dc6786852b6b3ab73230}\index{myGame::Entity@{myGame::Entity}!getHurtDir@{getHurtDir}}
+\index{getHurtDir@{getHurtDir}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getHurtDir()}{getHurtDir()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_ab268a2130635dc6786852b6b3ab73230} 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} my\+Game\+::\+Entity\+::get\+Hurt\+Dir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_abfb049c22cba7f4f452c9d5a66fbb1ae}\index{myGame::Entity@{myGame::Entity}!getLookDir@{getLookDir}}
+\index{getLookDir@{getLookDir}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getLookDir()}{getLookDir()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_abfb049c22cba7f4f452c9d5a66fbb1ae} 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} my\+Game\+::\+Entity\+::get\+Look\+Dir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_a2d5f3204eb117529366ad8d3d469dc55}\index{myGame::Entity@{myGame::Entity}!getRect@{getRect}}
+\index{getRect@{getRect}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a2d5f3204eb117529366ad8d3d469dc55} 
+SDL\+\_\+\+Rect my\+Game\+::\+Entity\+::get\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the object\textquotesingle{}s bounding rectangle. 
+
+\begin{DoxyReturn}{Returns}
+The SDL\+\_\+\+Rect representing the object\textquotesingle{}s position and size. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a73663d2ca3bec9da0cb57c0b300faadc}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_entity_a384f149e0ccbaeff46a2b05dbe33a1ce}\index{myGame::Entity@{myGame::Entity}!getSpeedY@{getSpeedY}}
+\index{getSpeedY@{getSpeedY}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getSpeedY()}{getSpeedY()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a384f149e0ccbaeff46a2b05dbe33a1ce} 
+float my\+Game\+::\+Entity\+::get\+SpeedY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classmy_game_1_1_entity_ad436ef9fecd354b06e2afa9bcdab0f5c}\index{myGame::Entity@{myGame::Entity}!getX@{getX}}
+\index{getX@{getX}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_ad436ef9fecd354b06e2afa9bcdab0f5c} 
+float my\+Game\+::\+Entity\+::getX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classmy_game_1_1_entity_a15b6970194ee4b71c7468bc49e9cd715}\index{myGame::Entity@{myGame::Entity}!getY@{getY}}
+\index{getY@{getY}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a15b6970194ee4b71c7468bc49e9cd715} 
+float my\+Game\+::\+Entity\+::getY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classmy_game_1_1_entity_a77a33e740920eb9463bf775b6cb92c8e}\index{myGame::Entity@{myGame::Entity}!isDead@{isDead}}
+\index{isDead@{isDead}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{isDead()}{isDead()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a77a33e740920eb9463bf775b6cb92c8e} 
+bool my\+Game\+::\+Entity\+::is\+Dead (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_ab8f71402379ba3efdd8759571a296bf1}\index{myGame::Entity@{myGame::Entity}!jump@{jump}}
+\index{jump@{jump}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_ab8f71402379ba3efdd8759571a296bf1} 
+void my\+Game\+::\+Entity\+::jump (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_a9de43b98a473868ca8c5d22a7048ee37}\index{myGame::Entity@{myGame::Entity}!move@{move}}
+\index{move@{move}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a9de43b98a473868ca8c5d22a7048ee37} 
+void my\+Game\+::\+Entity\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}}]{dir}{, }\item[{Uint32}]{delay}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmy_game_1_1_enemy_aada23ede3836860c4f0f6e7436165d7a}{my\+Game\+::\+Enemy}}.
+
+\Hypertarget{classmy_game_1_1_entity_a9b0525b849b28dd23af93408dc57b6af}\index{myGame::Entity@{myGame::Entity}!onGround@{onGround}}
+\index{onGround@{onGround}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{onGround()}{onGround()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a9b0525b849b28dd23af93408dc57b6af} 
+bool my\+Game\+::\+Entity\+::on\+Ground (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_a75237d599945277ae16a5723252137d3}\index{myGame::Entity@{myGame::Entity}!render@{render}}
+\index{render@{render}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a75237d599945277ae16a5723252137d3} 
+void my\+Game\+::\+Entity\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_game_1_1_camera}{Camera}} \&}]{camera}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the object using the provided camera and renderer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera used for rendering. \\
+\hline
+{\em renderer} & The SDL renderer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classmy_game_1_1_drawable_a42decc68553e8196e2d8057fdcf310ca}{my\+Game\+::\+Drawable}}.
+
+\Hypertarget{classmy_game_1_1_entity_a1508c631267b42e2260221005137f0ca}\index{myGame::Entity@{myGame::Entity}!setSpeedY@{setSpeedY}}
+\index{setSpeedY@{setSpeedY}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{setSpeedY()}{setSpeedY()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a1508c631267b42e2260221005137f0ca} 
+void my\+Game\+::\+Entity\+::set\+SpeedY (\begin{DoxyParamCaption}\item[{float}]{speed}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_ae31e37344f58bc18c953ecbfa06d7964}\index{myGame::Entity@{myGame::Entity}!setState@{setState}}
+\index{setState@{setState}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_ae31e37344f58bc18c953ecbfa06d7964} 
+void my\+Game\+::\+Entity\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}}}]{state}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmy_game_1_1_entity_a3c0a3a6022a1a8906891b32bf37ce0e6}\index{myGame::Entity@{myGame::Entity}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a3c0a3a6022a1a8906891b32bf37ce0e6} 
+void my\+Game\+::\+Entity\+::take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{, }\item[{\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}}}]{dir}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmy_game_1_1_entity_a8d6363775299b79ad771711f16ecaac3}\index{myGame::Entity@{myGame::Entity}!attackBox@{attackBox}}
+\index{attackBox@{attackBox}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{attackBox}{attackBox}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a8d6363775299b79ad771711f16ecaac3} 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} my\+Game\+::\+Entity\+::attack\+Box\hspace{0.3cm}{\ttfamily [protected]}}
+
+Attack range of the entity. \Hypertarget{classmy_game_1_1_entity_a051967a72c4a32c5e0211b900a01bf2d}\index{myGame::Entity@{myGame::Entity}!currentState@{currentState}}
+\index{currentState@{currentState}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{currentState}{currentState}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a051967a72c4a32c5e0211b900a01bf2d} 
+\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}} my\+Game\+::\+Entity\+::current\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+Current state of the entity. \Hypertarget{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3}\index{myGame::Entity@{myGame::Entity}!damage@{damage}}
+\index{damage@{damage}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{damage}{damage}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a97fa3e16e813d34221ffeb5c1cd316f3} 
+int my\+Game\+::\+Entity\+::damage\hspace{0.3cm}{\ttfamily [protected]}}
+
+Health and damage values. \Hypertarget{classmy_game_1_1_entity_af630887c37f9236a10d87c7f7a561768}\index{myGame::Entity@{myGame::Entity}!GRAVITY@{GRAVITY}}
+\index{GRAVITY@{GRAVITY}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{GRAVITY}{GRAVITY}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_af630887c37f9236a10d87c7f7a561768} 
+const int my\+Game\+::\+Entity\+::\+GRAVITY = 600\hspace{0.3cm}{\ttfamily [static]}}
+
+Gravity affecting the entity. \Hypertarget{classmy_game_1_1_entity_add761d6b51b814fcaa1c9b41da468f46}\index{myGame::Entity@{myGame::Entity}!health@{health}}
+\index{health@{health}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_add761d6b51b814fcaa1c9b41da468f46} 
+int my\+Game\+::\+Entity\+::health\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmy_game_1_1_entity_a9b25f86cfd981ccb0d9571b97a0c162a}\index{myGame::Entity@{myGame::Entity}!hitBox@{hitBox}}
+\index{hitBox@{hitBox}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{hitBox}{hitBox}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a9b25f86cfd981ccb0d9571b97a0c162a} 
+\mbox{\hyperlink{classmy_game_1_1_rectangle}{Rectangle}} my\+Game\+::\+Entity\+::hit\+Box\hspace{0.3cm}{\ttfamily [protected]}}
+
+Hitbox of the entity. \Hypertarget{classmy_game_1_1_entity_a7f321291a1e02aec44428009f8dae9a6}\index{myGame::Entity@{myGame::Entity}!hurtDir@{hurtDir}}
+\index{hurtDir@{hurtDir}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{hurtDir}{hurtDir}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a7f321291a1e02aec44428009f8dae9a6} 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} my\+Game\+::\+Entity\+::hurt\+Dir\hspace{0.3cm}{\ttfamily [protected]}}
+
+\doxylink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction} from which the entity was hurt. \Hypertarget{classmy_game_1_1_entity_afff2305dacea2dd689b04cac71ea8a74}\index{myGame::Entity@{myGame::Entity}!lookDir@{lookDir}}
+\index{lookDir@{lookDir}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{lookDir}{lookDir}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_afff2305dacea2dd689b04cac71ea8a74} 
+\mbox{\hyperlink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction}} my\+Game\+::\+Entity\+::look\+Dir\hspace{0.3cm}{\ttfamily [protected]}}
+
+\doxylink{namespacemy_game_aca9d8da5eb5b2c0d3e147116580fe885}{Direction} the entity is facing. \Hypertarget{classmy_game_1_1_entity_af4a0662f8a17b6a24e093688e80e1c6c}\index{myGame::Entity@{myGame::Entity}!MAXSPEEDX@{MAXSPEEDX}}
+\index{MAXSPEEDX@{MAXSPEEDX}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{MAXSPEEDX}{MAXSPEEDX}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_af4a0662f8a17b6a24e093688e80e1c6c} 
+const int my\+Game\+::\+Entity\+::\+MAXSPEEDX = 200\hspace{0.3cm}{\ttfamily [static]}}
+
+Maximum horizontal speed. \Hypertarget{classmy_game_1_1_entity_ac431662516087a122f2d031168ae0dca}\index{myGame::Entity@{myGame::Entity}!MAXSPEEDY@{MAXSPEEDY}}
+\index{MAXSPEEDY@{MAXSPEEDY}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{MAXSPEEDY}{MAXSPEEDY}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_ac431662516087a122f2d031168ae0dca} 
+const int my\+Game\+::\+Entity\+::\+MAXSPEEDY = 200\hspace{0.3cm}{\ttfamily [static]}}
+
+Maximum falling speed. \Hypertarget{classmy_game_1_1_entity_a531cc060007dbe3992f4323b791a0617}\index{myGame::Entity@{myGame::Entity}!speedY@{speedY}}
+\index{speedY@{speedY}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{speedY}{speedY}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a531cc060007dbe3992f4323b791a0617} 
+float my\+Game\+::\+Entity\+::speedY\hspace{0.3cm}{\ttfamily [protected]}}
+
+Vertical speed of the entity. \Hypertarget{classmy_game_1_1_entity_a382aefc4cccc1a2024cb904a0f8bb44a}\index{myGame::Entity@{myGame::Entity}!states@{states}}
+\index{states@{states}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{states}{states}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a382aefc4cccc1a2024cb904a0f8bb44a} 
+std\+::map$<$\mbox{\hyperlink{namespacemy_game_ad19747d4202074ffd87d268e5a9fa186}{States}}, \mbox{\hyperlink{classmy_game_1_1_state}{State}}\texorpdfstring{$\ast$}{*}$>$ my\+Game\+::\+Entity\+::states\hspace{0.3cm}{\ttfamily [protected]}}
+
+\doxylink{classmy_game_1_1_map}{Map} of entity states. \Hypertarget{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531}\index{myGame::Entity@{myGame::Entity}!walls@{walls}}
+\index{walls@{walls}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{walls}{walls}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a34b92fe8c5d3ba28688b3ff8f6bcd531} 
+std\+::vector$<$\mbox{\hyperlink{classmy_game_1_1_collide}{Collide}}\texorpdfstring{$\ast$}{*}$>$\& my\+Game\+::\+Entity\+::walls\hspace{0.3cm}{\ttfamily [protected]}}
+
+Reference to collidable objects. \Hypertarget{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db}\index{myGame::Entity@{myGame::Entity}!x@{x}}
+\index{x@{x}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a83360c716f051ddf37683107f15402db} 
+float my\+Game\+::\+Entity\+::x\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac}\index{myGame::Entity@{myGame::Entity}!y@{y}}
+\index{y@{y}!myGame::Entity@{myGame::Entity}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{classmy_game_1_1_entity_a710bdc04c46fb3b33b33392907c63dac} 
+float my\+Game\+::\+Entity\+::y\hspace{0.3cm}{\ttfamily [protected]}}
+
+Position coordinates. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}
