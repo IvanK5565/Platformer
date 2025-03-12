@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Screens.h"
 
 namespace myGame {
 	Game::Game(int screenWidth, int screenHeight) :
@@ -6,6 +7,8 @@ namespace myGame {
 		SCREEN_HEIGHT{ screenHeight },
 		GAME_WIDTH{ 1600 < screenWidth ? 1600 : screenWidth },
 		GAME_HEIGHT{ 900 < screenHeight ? 900 : screenHeight },
+		CAMERA_WIDTH{ 800 },
+		CAMERA_HEIGHT{ 480 },
 		screen{ nullptr },
 		_quit{ false },
 		camera(0, 0, 800, 480),
@@ -63,8 +66,8 @@ namespace myGame {
 		//Get rid of old surface
 		SDL_FreeSurface(textSurface);
 
-		TiXmlDocument doc("data.xml");
-		doc.LoadFile();
+		XMLDocument doc;
+		doc.LoadFile("data.xml");
 		if (!data.set(doc)) {
 			printf("Error to load data! Error: %s\n", getError().c_str());
 			_quit = true;
@@ -78,21 +81,19 @@ namespace myGame {
 
 		
 	}
-	bool Game::loadMainMenu()
+	void Game::loadMainMenu()
 	{
-		return false;
+		screen = new MainMenu(this, &data, renderer);
 	}
-	void Game::loadTest()
+	void Game::setNewScreen(Screen* scr)
 	{
-		screen = new Map(&data, renderer);
-	}
-	void Game::setNewScreen()
-	{
+		if(screen != nullptr) delete screen;
+		screen = scr;
 	}
 	void Game::act(Uint32 delay)
 	{
-		screen->act(delay);
 		camera.move(screen->getFocus(), screen->getRect(), delay);
+		screen->act(delay);
 	}
 	void Game::handleEvent(SDL_Event& e)
 	{

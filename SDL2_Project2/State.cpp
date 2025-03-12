@@ -53,6 +53,10 @@ namespace myGame {
 		}
 
 	}
+	bool State::isLastFrame()
+	{
+		return currentFrame == frames.size()-1;
+	}
 	State::~State()
 	{
 		for (SDL_Texture* t : frames) {
@@ -262,5 +266,18 @@ namespace myGame {
 	{
 		if (currentFrame != frames.size() - 1)
 			State::act(delay);
+	}
+	void EnemyHurtState::reset()
+	{
+		hurtTimer = 0;
+		State::reset();
+	}
+	void EnemyHurtState::act(Uint32 delay)
+	{
+		hurtTimer += delay;
+		if (hurtTimer > 1250 + rand()%250) {
+			entity->setState(States::Idle);
+		}
+		State::act(delay);
 	}
 }

@@ -24,6 +24,7 @@ namespace myGame {
 		virtual void act(Uint32 delay);
 		virtual void reset();
 		void render(Camera& camera, SDL_Renderer* renderer);
+		bool isLastFrame();
 
 		virtual ~State();
 	};
@@ -108,9 +109,12 @@ namespace myGame {
 		virtual ~EnemyAttackState() {}
 	};
 	class EnemyHurtState : public State {
+		unsigned int hurtTimer;
 	public:
 		EnemyHurtState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
-			: State(entity, _w, _h, data, type, renderer) {}
+			: State(entity, _w, _h, data, type, renderer), hurtTimer{ 0 } {}
+		virtual void reset() override;
+		virtual void act(Uint32 delay) override;
 		virtual ~EnemyHurtState() {}
 	};
 	class EnemyDeathState : public State {

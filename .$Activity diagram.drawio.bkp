@@ -1,0 +1,67 @@
+<mxfile host="Electron" modified="2024-05-06T12:52:53.949Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="bIfkub5m23B9slMxPNbq" version="24.1.0" type="device">
+  <diagram name="Страница — 1" id="MK1Qp15JaKnt3KAxQ0kF">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KALjVN1JxarLy75nHzVq-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-1" target="KALjVN1JxarLy75nHzVq-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-1" value="Start Game" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="359" y="280" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-2" target="KALjVN1JxarLy75nHzVq-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-2" value="Initialize Game" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="359" y="360" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-3" target="KALjVN1JxarLy75nHzVq-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-3" value="Initialize Level" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="440" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-4" target="KALjVN1JxarLy75nHzVq-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-4" value="Game Loop" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="520" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-5" target="KALjVN1JxarLy75nHzVq-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-5" value="Player input" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="600" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-6" target="KALjVN1JxarLy75nHzVq-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-6" value="Enemy act" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="680" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-7" target="KALjVN1JxarLy75nHzVq-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-7" value="Process collisions" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="760" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-8" target="KALjVN1JxarLy75nHzVq-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-8" value="Draw screen" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="920" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KALjVN1JxarLy75nHzVq-9" target="KALjVN1JxarLy75nHzVq-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-9" value="Check player death" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="840" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KALjVN1JxarLy75nHzVq-10" value="End Game" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="358" y="999" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props" Condition="Exists('..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -125,7 +124,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -140,6 +139,7 @@
     <ClCompile Include="Screens.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -149,16 +149,14 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Data.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Screens.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Tools.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="any\any\TinyXML.Static.txt" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="data.xml" />
@@ -171,8 +169,6 @@
     <Import Project="..\packages\sdl2_image.nuget.2.8.2\build\native\sdl2_image.nuget.targets" Condition="Exists('..\packages\sdl2_image.nuget.2.8.2\build\native\sdl2_image.nuget.targets')" />
     <Import Project="..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets" Condition="Exists('..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets')" />
     <Import Project="..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets" Condition="Exists('..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets')" />
-    <Import Project="..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets" Condition="Exists('..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets')" />
-    <Import Project="..\packages\TinyXML.Static.2.6.2.2\build\native\TinyXML.Static.targets" Condition="Exists('..\packages\TinyXML.Static.2.6.2.2\build\native\TinyXML.Static.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -184,8 +180,5 @@
     <Error Condition="!Exists('..\packages\sdl2_image.nuget.2.8.2\build\native\sdl2_image.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_image.nuget.2.8.2\build\native\sdl2_image.nuget.targets'))" />
     <Error Condition="!Exists('..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets'))" />
     <Error Condition="!Exists('..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets'))" />
-    <Error Condition="!Exists('..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.props'))" />
-    <Error Condition="!Exists('..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\YY.NuGet.Import.Helper.1.0.0.4\build\native\YY.NuGet.Import.Helper.targets'))" />
-    <Error Condition="!Exists('..\packages\TinyXML.Static.2.6.2.2\build\native\TinyXML.Static.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\TinyXML.Static.2.6.2.2\build\native\TinyXML.Static.targets'))" />
   </Target>
 </Project>

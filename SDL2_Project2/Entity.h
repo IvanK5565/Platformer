@@ -6,12 +6,8 @@ namespace myGame {
 	class Entity : public Drawable {
 	protected:
 		float x, y;
-		static const int GRAVITY = 100;
-		static const int MAXSPEEDY = 100;
-		static const int MAXSPEEDX = 100;
 		float speedY;
 		int health, damage;
-		//bool immobilized;
 		Direction lookDir;
 		Direction hurtDir;
 		//states
@@ -20,10 +16,13 @@ namespace myGame {
 		//collides
 		vector<Collide*>& walls;
 
-		Square hitBox;
-		Square attackBox;
+		Rectangle hitBox;
+		Rectangle attackBox;
 
 	public:
+		static const int GRAVITY = 600;
+		static const int MAXSPEEDY = 200;
+		static const int MAXSPEEDX = 200;
 		Entity(int, int, int, int, EntityData*, vector<Collide*>&, SDL_Renderer*);
 		virtual ~Entity();
 
@@ -39,7 +38,7 @@ namespace myGame {
 		void jump();
 		void takeDamage(int, Direction);
 		virtual void attack() = 0;
-		Square& getHitBox();
+		Rectangle& getHitBox();
 		bool onGround();
 		void collissionUpdate();
 
@@ -56,7 +55,6 @@ namespace myGame {
 
 		virtual void attack() override;
 		virtual void act(Uint32 delay) override;
-		//virtual void render(Camera& camera, SDL_Renderer* renderer) override;
 	};
 
 	class Enemy : public Entity {
@@ -70,7 +68,5 @@ namespace myGame {
 		virtual void move(Direction dir, Uint32 delay) override;
 		virtual void attack() override;
 		virtual void act(Uint32 delay) override;
-
-		//virtual void render(Camera& camera, SDL_Renderer* renderer) override;
 	};
 }

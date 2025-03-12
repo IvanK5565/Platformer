@@ -25,6 +25,10 @@
         <jump   place="./assets/images/bandit2/jump/"   count="1"/>
         <run    place="./assets/images/bandit2/run/"    count="8"/>
     </bandit2>
-    <maps type="tmx" count="1" place="./assets/maps/"/>
+    <menu width="30" height="14">
+        <play path="./assets/images/playButton.png"/>
+        <exit path="./assets/images/exitButton.png"/>
+    </menu>
+    <maps type="tmx" count="2" place="./assets/maps/" winPath="./assets/images/winPath.png" deadPath="./assets/images/deadPath.png"/>
     <background path="./assets/images/background.png"/>
 </data>

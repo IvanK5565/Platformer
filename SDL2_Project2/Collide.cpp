@@ -3,7 +3,7 @@
 
 namespace myGame {
 
-	CollisionInfo RightTriangle::checkCollision(const Square& box) {
+	CollisionInfo RightTriangle::checkCollision(const Rectangle& box) {
 		if (box.y + box.height < y) return { false };
 		if (box.x > x + SIDE) return { false };
 
@@ -40,7 +40,7 @@ namespace myGame {
 
 		return{ true, x1,x2,y1,y2 };
 	}
-	CollisionInfo LeftTriangle::checkCollision(const Square& box) {
+	CollisionInfo LeftTriangle::checkCollision(const Rectangle& box) {
 		if (box.y + box.height < y) return { false };
 		if (box.x > x + SIDE) return { false };
 
@@ -75,7 +75,7 @@ namespace myGame {
 
 		return{ true, x1,x2,y1,y2 };
 	}
-	CollisionInfo Square::checkCollision(const Square& box) {
+	CollisionInfo Rectangle::checkCollision(const Rectangle& box) {
 		int x1 = box.x + box.width - x;
 		int x2 = box.x - x - width;
 		if (x1 < 0 || x2 > 0) {
@@ -95,7 +95,7 @@ namespace myGame {
 		return { true, -x1,-x2,-y1,-y2 };
 	}
 
-	CollisionInfo Square::checkCollision(const int _x, const int _y)
+	CollisionInfo Rectangle::checkCollision(const int _x, const int _y)
 	{
 		int x1 = _x - x;
 		int x2 = _x - x - width;
@@ -140,7 +140,7 @@ namespace myGame {
 			SDL_RenderDrawLine(renderer, pos.x, pos.y, pos.x + SIDE, pos.y + SIDE);
 		}
 	}
-	void Square::drawBorder(SDL_Renderer* renderer, Camera& camera)
+	void Rectangle::drawBorder(SDL_Renderer* renderer, Camera& camera)
 	{
 		SDL_Rect pos{ x,y,width,height };
 		if (SDL_HasIntersection(&pos, &camera.rect) == SDL_TRUE) {
@@ -159,9 +159,9 @@ namespace myGame {
 	{
 		return CollideType::LeftTriangle;
 	}
-	CollideType Square::getType()
+	CollideType Rectangle::getType()
 	{
-		return CollideType::Square;
+		return CollideType::Rectangle;
 	}
 
 	void Collide::setPos(int x, int y)

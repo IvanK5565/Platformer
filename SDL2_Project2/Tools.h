@@ -9,6 +9,18 @@
 using std::string, std::vector, std::queue;
 
 namespace myGame {
+	static string trim(const std::string& source) {
+		std::string s(source);
+		s.erase(0, s.find_first_not_of(" \n\r\t"));
+		s.erase(s.find_last_not_of(" \n\r\t") + 1);
+		return s;
+	}
+	static string trim(const std::string& source, const char c) {
+		std::string s(source);
+		s.erase(0, s.find_first_not_of(c));
+		s.erase(s.find_last_not_of(c) + 1);
+		return s;
+	}
 	static size_t split(const string& txt, vector<string>& strs, char ch)
 	{
 		size_t pos = txt.find(ch);

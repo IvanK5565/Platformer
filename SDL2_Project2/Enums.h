@@ -25,7 +25,7 @@ namespace myGame {
 	enum class CollideType {
 		RightTriangle,
 		LeftTriangle,
-		Square
+		Rectangle
 	};
 	enum class TexturesID {
 		Player,
@@ -35,6 +35,12 @@ namespace myGame {
 
 	enum class StatusCode {
 		CORRECT,
-		UNCORRECT
+		UNCORRECT,
+	};
+
+	enum class MapStatus {
+		Act,
+		Win,
+		Lose,
 	};
 }

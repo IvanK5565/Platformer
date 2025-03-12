@@ -1,33 +1,34 @@
 #pragma once
 #include "Enums.h"
-#include <string>
+#include "tinyxml2.h"
 #include <iostream>
-#include <tinyxml.h>
+#include <string>
 
+using tinyxml2::XMLElement, tinyxml2::XMLDocument, tinyxml2::XML_SUCCESS;
 using std::string;
 
 namespace myGame {
 	struct TilesData {
 		string type, place;
 		int count, width, height;
-		bool set(TiXmlElement* e) {
+		bool set(XMLElement* e) {
 			type = e->Attribute("type");
 			if (type.empty()) return false;
 			place = e->Attribute("place");
 			if (place.empty()) return false;
-			if (e->QueryIntAttribute("count", &count) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("width", &width) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("height", &height) != TIXML_SUCCESS) return false;
+			if (e->QueryIntAttribute("count", &count) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("width", &width) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("height", &height) != XML_SUCCESS) return false;
 			return true;
 		}
 	};
 	struct StateData {
 		int count;
 		string place;
-		bool set(TiXmlElement* e) {
+		bool set(XMLElement* e) {
 			place = e->Attribute("place");
 			if (place.empty()) return false;
-			if (e->QueryIntAttribute("count", &count) != TIXML_SUCCESS) return false;
+			if (e->QueryIntAttribute("count", &count) != XML_SUCCESS) return false;
 			return true;
 		}
 	};
@@ -42,17 +43,17 @@ namespace myGame {
 		StateData idle;
 		StateData jump;
 		StateData run;
-		bool set(TiXmlElement* e) {
+		bool set(XMLElement* e) {
 			type = e->Attribute("type");
 			if (type.empty()) return false;
-			if (e->QueryIntAttribute("width", &width) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("height", &height) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("hitW", &hitW) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("hitH", &hitH) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("attackW", &attackW) != TIXML_SUCCESS) return false;
-			if (e->QueryIntAttribute("attackH", &attackH) != TIXML_SUCCESS) return false;
+			if (e->QueryIntAttribute("width", &width) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("height", &height) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("hitW", &hitW) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("hitH", &hitH) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("attackW", &attackW) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("attackH", &attackH) != XML_SUCCESS) return false;
 
-			TiXmlElement* e2;
+			XMLElement* e2;
 
 			e2 = e->FirstChildElement("attack");
 			if (e2 == nullptr) return false;
@@ -82,15 +83,46 @@ namespace myGame {
 
 		}
 	};
+	struct MenuData {
+		int width, height;
+		string playButPath;
+		string exitButPath;
+		bool set(XMLElement* e) {
+			if (e->QueryIntAttribute("width", &width) != XML_SUCCESS) return false;
+			if (e->QueryIntAttribute("height", &height) != XML_SUCCESS) return false;
+
+
+			XMLElement* e2;
+
+			e2 = e->FirstChildElement("play");
+			if (e2 == nullptr) return false;
+			playButPath = e2->Attribute("path");
+			if (playButPath.empty()) return false;
+			
+			e2 = e->FirstChildElement("exit");
+			if (e2 == nullptr) return false;
+			exitButPath = e2->Attribute("path");
+			if (exitButPath.empty()) return false;
+
+			return true;
+		}
+
+	};
 	struct MapsData {
 		string type, place;
 		int count;
-		bool set(TiXmlElement* e) {
+		string winPath;
+		string deadPath;
+		bool set(XMLElement* e) {
 			type = e->Attribute("type");
 			if (type.empty()) return false;
 			place = e->Attribute("place");
 			if (place.empty()) return false;
-			if (e->QueryIntAttribute("count", &count) != TIXML_SUCCESS) return false;
+			if (e->QueryIntAttribute("count", &count) != XML_SUCCESS) return false;
+			winPath = e->Attribute("winPath");
+			if (winPath.empty()) return false;
+			deadPath = e->Attribute("deadPath");
+			if (deadPath.empty()) return false;
 			return true;
 		}
 	};
@@ -98,37 +130,26 @@ namespace myGame {
 		TilesData tiles;
 		EntityData player;
 		EntityData bandit[2];
+		MenuData menu;
 		MapsData maps;
 		string backgroundPath;
-		bool set(TiXmlDocument& d) {
-			TiXmlElement* data = d.FirstChildElement("data");
-			TiXmlElement* e;
-
+		bool set(XMLDocument& d) {
+			XMLElement* data = d.FirstChildElement("data");
+			XMLElement* e;
 			e = data->FirstChildElement("tiles");
-			if (e == nullptr) return false;
-			if (!tiles.set(e)) return false;
-
+			tiles.set(e);
 			e = data->FirstChildElement("player");
-			if (e == nullptr) return false;
-			if (!player.set(e)) return false;
-
+			player.set(e);
 			e = data->FirstChildElement("bandit1");
-			if (e == nullptr) return false;
-			if (!bandit[0].set(e)) return false;
-
+			bandit[0].set(e);
 			e = data->FirstChildElement("bandit2");
-			if (e == nullptr) return false;
-			if (!bandit[1].set(e)) return false;
-
+			bandit[1].set(e);
+			e = data->FirstChildElement("menu");
+			menu.set(e);
 			e = data->FirstChildElement("maps");
-			if (e == nullptr) return false;
-			if (!maps.set(e)) return false;
-
+			maps.set(e);
 			e = data->FirstChildElement("background");
-			if (e == nullptr) return false;
 			backgroundPath = e->Attribute("path");
-			if (backgroundPath.empty()) return false;
-
 			return true;
 		}
 	};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="48" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="57">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="48" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="64">
  <editorsettings>
   <export target="1.csv" format="csv"/>
  </editorsettings>
@@ -13,26 +13,27 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 72,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,2,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,50,51,0,0,0,0,0,0,0,43,2,55,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-24,42,0,0,0,0,0,0,0,43,7,7,2,3,0,0,0,0,0,0,0,0,0,43,2,55,63,80,81,0,0,0,0,0,0,52,0,1,42,0,0,0,0,0,0,0,0,0,
-64,54,7,2,2,2,7,7,2,55,63,15,15,16,78,9,10,11,22,11,10,33,2,55,24,13,35,11,10,33,7,7,2,42,0,0,0,17,54,2,2,2,7,2,7,7,7,7,
-4,14,14,14,14,14,14,14,14,14,4,4,4,35,11,36,39,38,14,4,40,40,38,15,37,38,38,4,4,4,14,14,41,54,42,0,0,61,14,14,14,14,15,14,14,15,15,14,
-38,4,38,38,39,39,4,39,37,38,39,4,40,37,4,38,37,39,37,40,39,37,38,40,39,4,37,38,40,37,4,38,40,41,54,34,10,36,4,37,40,38,40,38,40,4,4,40,
+24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,2,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,50,51,0,0,0,0,0,0,0,43,2,55,24,54,0,0,0,0,0,52,0,0,0,0,0,0,0,0,0,0,0,0,
+24,42,0,0,0,0,0,0,0,43,2,2,2,3,0,0,0,0,0,0,0,0,0,43,2,55,63,75,80,84,0,43,2,42,0,0,0,1,42,0,0,0,0,0,0,0,0,0,
+64,54,2,2,2,2,2,2,2,55,63,15,15,16,78,9,10,11,22,11,10,33,2,55,24,13,35,11,10,33,2,55,24,54,42,0,0,17,54,2,2,2,2,2,2,2,2,2,
+4,14,14,14,14,14,14,14,14,14,4,4,4,35,11,36,39,38,14,4,40,40,38,15,37,38,38,4,4,4,14,14,41,24,54,42,0,61,14,14,14,14,15,14,14,15,15,14,
+38,4,38,38,39,39,4,39,37,38,39,4,40,37,4,38,37,39,37,40,39,37,38,40,39,4,37,38,40,37,4,38,40,41,24,54,34,36,4,37,40,38,40,38,40,4,4,40,
 4,4,4,4,4,4,4,4,39,4,4,4,4,39,4,4,39,4,4,4,4,40,4,4,4,4,39,4,4,40,4,4,4,4,4,4,4,4,4,40,4,39,4,39,40,37,40,4,
 37,4,4,39,39,37,40,37,40,39,38,37,37,4,37,39,39,40,38,38,4,39,4,39,40,4,39,4,40,38,37,37,38,39,38,40,40,38,38,38,40,39,4,4,39,4,40,4,
 37,37,37,39,4,39,38,4,37,39,40,39,40,40,39,40,37,4,39,40,37,39,40,40,39,37,40,40,4,40,37,39,40,4,40,38,40,38,38,37,38,4,38,37,39,4,4,38
 </data>
  </layer>
- <objectgroup id="5" name="Прошарок об'єктів 1">
+ <objectgroup id="5" name="Прошарок об'єктів 1" visible="0">
   <object id="8" type="rect" x="0" y="192" width="32" height="128"/>
   <object id="10" type="rect" x="0" y="320" width="320" height="192"/>
   <object id="11" name="right" type="triangle" x="288" y="320">
    <polygon points="0,0 32,0 32,-32"/>
   </object>
   <object id="14" type="rect" x="320" y="288" width="128" height="64"/>
-  <object id="15" type="rect" x="320" y="352" width="768" height="160"/>
-  <object id="16" type="rect" x="480" y="320" width="576" height="32"/>
+  <object id="15" type="rect" x="1088" y="352" width="32" height="160"/>
+  <object id="57" type="rect" x="320" y="352" width="160" height="160"/>
+  <object id="16" type="rect" x="480" y="320" width="608" height="192"/>
   <object id="25" name="right" type="triangle" x="736" y="320">
    <polygon points="0,0 32,-32 32,0"/>
   </object>
@@ -42,38 +43,49 @@
   <object id="27" name="right" type="triangle" x="864" y="256">
    <polygon points="0,0 32,-32 32,0"/>
   </object>
+  <object id="63" name="right" type="triangle" x="992" y="320">
+   <polygon points="0,0 32,-32 32,0"/>
+  </object>
   <object id="30" type="rect" x="480" y="256" width="96" height="32"/>
   <object id="31" type="rect" x="768" y="288" width="64" height="32"/>
   <object id="32" type="rect" x="832" y="256" width="32" height="64"/>
-  <object id="33" type="rect" x="896" y="224" width="64" height="32"/>
-  <object id="34" type="rect" x="1120" y="288" width="32" height="32"/>
+  <object id="33" type="rect" x="896" y="224" width="32" height="32"/>
+  <object id="34" type="rect" x="1120" y="256" width="32" height="32"/>
+  <object id="59" type="rect" x="1024" y="288" width="32" height="32"/>
   <object id="35" type="rect" x="1184" y="288" width="32" height="96"/>
   <object id="36" type="rect" x="1216" y="320" width="320" height="192"/>
-  <object id="39" type="rect" x="864" y="256" width="64" height="32"/>
-  <object id="41" type="rect" x="1088" y="384" width="128" height="128"/>
+  <object id="58" type="rect" x="1536" y="128" width="64" height="256"/>
+  <object id="39" type="rect" x="864" y="256" width="96" height="32"/>
+  <object id="41" type="rect" x="1120" y="384" width="96" height="128"/>
   <object id="42" name="left" type="triangle" x="32" y="288">
    <polygon points="0,0 0,32 32,32"/>
   </object>
   <object id="44" name="left" type="triangle" x="1216" y="288">
    <polygon points="0,0 0,32 32,32"/>
   </object>
-  <object id="45" name="left" type="triangle" x="1056" y="320">
+  <object id="45" name="left" type="triangle" x="1088" y="320">
    <polygon points="0,0 0,32 32,32"/>
   </object>
-  <object id="46" name="left" type="triangle" x="1088" y="352">
+  <object id="62" name="left" type="triangle" x="1056" y="288">
+   <polygon points="0,0 0,32 32,32"/>
+  </object>
+  <object id="61" name="left" type="triangle" x="928" y="224">
+   <polygon points="0,0 0,32 32,32"/>
+  </object>
+  <object id="46" name="left" type="triangle" x="1120" y="352">
    <polygon points="0,0 0,32 32,32"/>
   </object>
   <object id="50" type="playerSpawn" x="160" y="288">
    <point/>
   </object>
-  <object id="51" type="win" x="1504" y="288" width="32" height="32"/>
+  <object id="51" type="win" x="1504" y="192" width="32" height="128"/>
   <object id="52" type="enemy" x="640" y="288">
    <point/>
   </object>
   <object id="53" type="enemy" x="704" y="288">
    <point/>
   </object>
-  <object id="54" type="enemy" x="992" y="288">
+  <object id="54" type="enemy" x="1038.67" y="242.667">
    <point/>
   </object>
   <object id="55" type="enemy" x="1280" y="288">

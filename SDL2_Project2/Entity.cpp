@@ -33,7 +33,7 @@ namespace myGame {
 	}
 	bool Entity::isDead()
 	{
-		return health <= 0;
+		return health <= 0 && states[currentState];
 	}
 	Direction Entity::getLookDir() {
 		return lookDir;
@@ -47,10 +47,6 @@ namespace myGame {
 			result->second->reset();
 		}
 	}
-	/*void Entity::move(Direction dir)
-	{
-		setState(States::Run);
-	}*/
 	void Entity::move(Direction dir, Uint32 delay)
 	{
 		int dop = MAXSPEEDX * delay / 1000;
@@ -66,33 +62,11 @@ namespace myGame {
 			break;
 		}
 	}
-	/*void Entity::stopMove()
-	{
-		speedX = 0;
-	}
-	void Entity::stopMove(Direction dir)
-	{
-		if (dir == Direction::Right)
-			speedX = std::min(0.f, speedX);
-		else
-			speedX = std::max(0.f, speedX);
-		if (speedX == 0) {
-			setState(States::Idle);
-		}
-	}*/
 	void Entity::jump()
 	{
 		setState(States::Jump);
 		speedY = -(float)MAXSPEEDY;
 	}
-	/*void Entity::idle()
-	{
-		setState(States::Idle);
-	}
-	void Entity::startAttack()
-	{
-		setState(States::Attack);
-	}*/
 	void Entity::takeDamage(int damage, Direction dir)
 	{
 		if (health > 0) {
@@ -106,7 +80,7 @@ namespace myGame {
 			setState(States::Death);
 		}
 	}
-	Square& Entity::getHitBox() {
+	Rectangle& Entity::getHitBox() {
 		hitBox.setPos(x - hitBox.width / 2, y - hitBox.height);
 		return hitBox;
 	}
@@ -189,7 +163,6 @@ namespace myGame {
 			lookDir = Direction::Left;
 		}
 
-		//x += speedX * delay / 1000;
 		y += speedY * delay / 1000;
 
 		collissionUpdate();
@@ -276,46 +249,49 @@ namespace myGame {
 
 	}
 	void Enemy::act(Uint32 delay) {
-		int distanceToPlayerX = player->getX() - getX();
-		if (abs(distanceToPlayerX) < 100) {
-			targetSpotted = true;
-			if (distanceToPlayerX < 0) lookDir = Direction::Left;
-			else if (distanceToPlayerX > 0) lookDir = Direction::Right;
+		if (isDead()) { 
+			setState(States::Death);
 		}
 		else {
-			targetSpotted = false;
-		}
-
-		if (currentState == States::Hurt || currentState == States::Death || currentState == States::Attack) {
-			states[currentState]->act(delay);
-			targetSpotted = false;
-		}
-		else {
-			bool onGroundTemp = onGround();
-			if (onGroundTemp) {
-				//to idle:
-				if (!targetSpotted || player->isDead()) {
-					setState(States::Idle);
-				}
-				else {
-					//to attack:
-					if (abs(distanceToPlayerX) < attackBox.getRect().w) {
-						setState(States::Attack);
-					}
-					//to run:
-					else setState(States::Run);
-				}
+			int distanceToPlayerX = player->getX() - getX();
+			if (abs(distanceToPlayerX) < 100) {
+				targetSpotted = true;
+				if (distanceToPlayerX < 0) lookDir = Direction::Left;
+				else if (distanceToPlayerX > 0) lookDir = Direction::Right;
 			}
-			//to jump:
 			else {
-				setState(States::Jump);
-				if (targetSpotted) {
-					move(lookDir, delay);
-				}
+				targetSpotted = false;
 			}
 
-			states[currentState]->act(delay);
+			if (currentState == States::Hurt || currentState == States::Death || currentState == States::Attack) {
+				targetSpotted = false;
+			}
+			else {
+				bool onGroundTemp = onGround();
+				if (onGroundTemp) {
+					//to idle:
+					if (!targetSpotted || player->isDead()) {
+						setState(States::Idle);
+					}
+					else {
+						//to attack:
+						if (abs(distanceToPlayerX) < attackBox.getRect().w) {
+							setState(States::Attack);
+						}
+						//to run:
+						else setState(States::Run);
+					}
+				}
+				//to jump:
+				else {
+					setState(States::Jump);
+					if (targetSpotted) {
+						move(lookDir, delay);
+					}
+				}
+			}
 		}
+		states[currentState]->act(delay);
 
 		if (!onGround()) {
 			speedY += (float)(delay * GRAVITY) / 1000;
@@ -326,23 +302,5 @@ namespace myGame {
 		y += speedY * delay / 1000;
 
 		collissionUpdate();
-		if (isDead()) setState(States::Death);
 	}
-//	void Enemy::render(Camera& camera, SDL_Renderer* renderer) {
-//		states[currentState]->render(camera, renderer);
-//
-//#ifdef DEBUG
-//		SDL_Rect pos = { x,y,1,1 };
-//		if (SDL_HasIntersection(&pos, &camera.rect) == SDL_TRUE) {
-//			pos.x -= camera.rect.x;
-//			pos.y -= camera.rect.y;
-//			SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0xFF, 0xFF);
-//			SDL_RenderDrawLine(renderer, pos.x, pos.y, pos.x + 10, pos.y);
-//			SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
-//			SDL_RenderDrawLine(renderer, pos.x, pos.y, pos.x, pos.y + 10);
-//		}
-//		hitBox.drawBorder(renderer, camera);
-//		attackBox.drawBorder(renderer, camera);
-//#endif // DEBUG
-//	}
 }

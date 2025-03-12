@@ -17,4 +17,3 @@ namespace myGame {
 		void move(Direction, SDL_Rect);
 	};
 }
-
