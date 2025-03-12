@@ -3,70 +3,122 @@
 #include "Enums.h"
 
 namespace myGame {
-	class Entity : public Drawable {
-	protected:
-		float x, y;
-		float speedY;
-		int health, damage;
-		Direction lookDir;
-		Direction hurtDir;
-		//states
-		map<States, State*> states;
-		States currentState;
-		//collides
-		vector<Collide*>& walls;
+    /**
+     * @class Entity
+     * @brief A base class representing all game entities.
+     */
+    class Entity : public Drawable {
+    protected:
+        float x, y; /**< Position coordinates. */
+        float speedY; /**< Vertical speed of the entity. */
+        int health, damage; /**< Health and damage values. */
+        Direction lookDir; /**< Direction the entity is facing. */
+        Direction hurtDir; /**< Direction from which the entity was hurt. */
 
-		Rectangle hitBox;
-		Rectangle attackBox;
+        std::map<States, State*> states; /**< Map of entity states. */
+        States currentState; /**< Current state of the entity. */
 
-	public:
-		static const int GRAVITY = 600;
-		static const int MAXSPEEDY = 200;
-		static const int MAXSPEEDX = 200;
-		Entity(int, int, int, int, EntityData*, vector<Collide*>&, SDL_Renderer*);
-		virtual ~Entity();
+        std::vector<Collide*>& walls; /**< Reference to collidable objects. */
 
-		float getX() const;
-		float getY() const;
-		float getSpeedY() const;
-		void setSpeedY(float);
-		Direction getLookDir();
-		Direction getHurtDir();
-		bool isDead();
-		void setState(States);
-		virtual void move(Direction, Uint32);
-		void jump();
-		void takeDamage(int, Direction);
-		virtual void attack() = 0;
-		Rectangle& getHitBox();
-		bool onGround();
-		void collissionUpdate();
+        Rectangle hitBox; /**< Hitbox of the entity. */
+        Rectangle attackBox; /**< Attack range of the entity. */
 
-		virtual SDL_Rect getRect() override;
-		virtual SDL_Point getFocus() override;
-		virtual void render(Camera& camera, SDL_Renderer* renderer) override;
-	};
+    public:
+        static const int GRAVITY = 600; /**< Gravity affecting the entity. */
+        static const int MAXSPEEDY = 200; /**< Maximum falling speed. */
+        static const int MAXSPEEDX = 200; /**< Maximum horizontal speed. */
 
-	class Player : public Entity {
-		vector<Entity*>& enemies;
-	public:
-		Player(int x, int y, EntityData* data, vector<Collide*>& ground, vector<Entity*>& enemies, SDL_Renderer* r);
-		virtual ~Player();
+        /**
+         * @brief Constructor for an entity.
+         * @param x X position.
+         * @param y Y position.
+         * @param w Width.
+         * @param h Height.
+         * @param data Entity data.
+         * @param walls Reference to collidable objects.
+         * @param renderer SDL renderer.
+         */
+        Entity(int x, int y, int w, int h, EntityData* data, std::vector<Collide*>& walls, SDL_Renderer* renderer);
 
-		virtual void attack() override;
-		virtual void act(Uint32 delay) override;
-	};
+        /**
+         * @brief Destructor for Entity.
+         */
+        virtual ~Entity();
 
-	class Enemy : public Entity {
-		Player* player;
-		bool targetSpotted;
-	public:
-		Enemy(int x, int y, EntityData* data, vector<Collide*>& ground, Player* player, SDL_Renderer* r);
-		virtual ~Enemy();
+        float getX() const;
+        float getY() const;
+        float getSpeedY() const;
+        void setSpeedY(float speed);
+        Direction getLookDir();
+        Direction getHurtDir();
+        bool isDead();
+        void setState(States state);
+        virtual void move(Direction dir, Uint32 delay);
+        void jump();
+        void takeDamage(int damage, Direction dir);
+        virtual void attack() = 0;
+        Rectangle& getHitBox();
+        bool onGround();
+        void collissionUpdate();
 
+        virtual SDL_Rect getRect() override;
+        virtual SDL_Point getFocus() override;
+        virtual void render(Camera& camera, SDL_Renderer* renderer) override;
+    };
 
-		virtual void move(Direction dir, Uint32 delay) override;
-		virtual void attack() override;
-		virtual void act(Uint32 delay) override;
-	};
+    /**
+     * @class Player
+     * @brief A class representing the player character.
+     */
+    class Player : public Entity {
+        std::vector<Entity*>& enemies; /**< Reference to enemy entities. */
+    public:
+        /**
+         * @brief Constructor for Player.
+         * @param x X position.
+         * @param y Y position.
+         * @param data Entity data.
+         * @param ground Reference to ground colliders.
+         * @param enemies Reference to enemy entities.
+         * @param renderer SDL renderer.
+         */
+        Player(int x, int y, EntityData* data, std::vector<Collide*>& ground, std::vector<Entity*>& enemies, SDL_Renderer* renderer);
+
+        /**
+         * @brief Destructor for Player.
+         */
+        virtual ~Player();
+
+        virtual void attack() override;
+        virtual void act(Uint32 delay) override;
+    };
+
+    /**
+     * @class Enemy
+     * @brief A class representing an enemy entity.
+     */
+    class Enemy : public Entity {
+        Player* player; /**< Reference to the player. */
+        bool targetSpotted; /**< Flag indicating if the player is detected. */
+    public:
+        /**
+         * @brief Constructor for Enemy.
+         * @param x X position.
+         * @param y Y position.
+         * @param data Entity data.
+         * @param ground Reference to ground colliders.
+         * @param player Reference to the player entity.
+         * @param renderer SDL renderer.
+         */
+        Enemy(int x, int y, EntityData* data, std::vector<Collide*>& ground, Player* player, SDL_Renderer* renderer);
+
+        /**
+         * @brief Destructor for Enemy.
+         */
+        virtual ~Enemy();
+
+        virtual void move(Direction dir, Uint32 delay) override;
+        virtual void attack() override;
+        virtual void act(Uint32 delay) override;
+    };
 }
