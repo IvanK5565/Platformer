@@ -1,10 +1,10 @@
 #pragma once
 #include "Camera.h"
 #include "Collide.h"
-#include "Data.h"
 #include "State.h"
 
 namespace myGame {
+	/* abstract */
 	class Drawable {
 	public:
 		virtual void render(Camera&, SDL_Renderer*) = 0;

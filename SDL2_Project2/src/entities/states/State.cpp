@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Game.h"
 #include "State.h"
+#include "TextureLoader.h"
 
 namespace myGame {
 	//State
@@ -37,7 +38,14 @@ namespace myGame {
 	}
 	void State::render(Camera& camera, SDL_Renderer* renderer)
 	{
-		currentFrame = min(currentFrame, frames.size() - 1);
+		if (frames.empty()) {
+			return;
+		}
+
+		if (currentFrame < 0 ||
+			static_cast<size_t>(currentFrame) >= frames.size()) {
+			currentFrame = static_cast<int>(frames.size()) - 1;
+		}
 		SDL_Rect pos = { entity->getX() - w / 2, entity->getY() - h, w, h };
 		if (SDL_HasIntersection(&pos, &camera.rect) == SDL_TRUE) {
 			pos.x -= camera.rect.x;

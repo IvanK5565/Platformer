@@ -136,7 +136,7 @@
     <ClCompile Include="Collide.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Screens.cpp" />
+    <ClCompile Include="Screen.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
@@ -149,7 +149,7 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Data.h" />
-    <ClInclude Include="Screens.h" />
+    <ClInclude Include="Screen.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Tools.h" />

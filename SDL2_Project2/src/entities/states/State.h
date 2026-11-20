@@ -1,7 +1,5 @@
 #pragma once
 #include "Data.h"
-#include "Enums.h"
-#include "Tools.h"
 #include <map>
 #include <SDL.h>
 #include <vector>

@@ -1,5 +1,7 @@
 #include "Game.h"
-#include "Screens.h"
+#include "Screen.h"
+#include "TextureLoader.h"
+#include "MainMenu.h"
 
 namespace myGame {
 	Game::Game(int screenWidth, int screenHeight) :

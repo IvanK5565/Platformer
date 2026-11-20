@@ -1,4 +1,5 @@
 #include "Camera.h"
+#include <algorithm>
 
 namespace myGame {
 	Camera::Camera() : maxSpeedX(10), maxSpeedY(10) {

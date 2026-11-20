@@ -1,9 +1,7 @@
 #pragma once
 #include "Camera.h"
 #include "Data.h"
-#include "Tools.h"
 #include <SDL_ttf.h>
-#include <windows.h>
 #include <string>
 
 using std::string;

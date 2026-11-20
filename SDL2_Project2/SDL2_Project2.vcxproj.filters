@@ -33,7 +33,7 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Screens.cpp">
+    <ClCompile Include="Screen.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="tinyxml2.cpp">
@@ -65,7 +65,7 @@
     <ClInclude Include="Tools.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Screens.h">
+    <ClInclude Include="Screen.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Drawable.h">

@@ -1,7 +1,6 @@
 #pragma once
-#include "Enums.h"
 #include "tinyxml2.h"
-#include <iostream>
+#include "State.h"
 #include <string>
 
 using tinyxml2::XMLElement, tinyxml2::XMLDocument, tinyxml2::XML_SUCCESS;
