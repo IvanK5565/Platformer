@@ -1,5 +1,8 @@
-#include "Screen.h"
+#include "MainMenu.h"
+#include "Map.h"
 #include "Game.h"
+#include "../common/TextureLoader.h"
+
 using tinyxml2::XML_NO_ATTRIBUTE;
 namespace myGame {
 	MainMenu::MainMenu(Game* game, Data* data, SDL_Renderer* r)

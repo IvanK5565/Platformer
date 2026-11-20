@@ -17,7 +17,7 @@ namespace myGame {
 		SDL_Renderer* renderer;
 		TTF_Font* font;
 		SDL_Texture* loadingTexture;
-		SDL_Texture* background;
+		SDL_Texture* background = nullptr;
 		Camera camera;
 		Screen* screen;
 		Data data;

@@ -1,15 +1,21 @@
 #define SDL_MAIN_HANDLED
 #include "Game.h"
 #include <SDL.h>
+#include <cstdlib>
+#include <ctime>
+#include <Windows.h>
 
 using namespace myGame;
 
 int main(int argc, const int** args) {
-	srand(time(NULL));
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));
 	int width = GetSystemMetrics(SM_CXSCREEN);
 	int height = GetSystemMetrics(SM_CYSCREEN);
 	Game game(width, height);
-	bool quit = game._quit;
+	if (game._quit)
+		return game.quit();
+
+	bool quit = false;
 	game.loadMainMenu();
 
 

@@ -1,4 +1,9 @@
 #include "Map.h"
+#include "Game.h"
+#include "MainMenu.h"
+#include "TextureLoader.h"
+#include "StringUtils.h"
+#include "Enemy.h"
 
 using tinyxml2::XML_NO_ATTRIBUTE;
 namespace myGame {

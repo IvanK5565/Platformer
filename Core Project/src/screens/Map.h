@@ -1,7 +1,7 @@
 #pragma once
 #include "Drawable.h"
 #include "Entity.h"
-#include "Tools.h"
+#include "../entities/Player.h"
 #include "Screen.h"
 #include <SDL_Image.h>
 #include <string>

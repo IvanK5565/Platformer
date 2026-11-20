@@ -69,10 +69,16 @@ namespace myGame {
 		SDL_FreeSurface(textSurface);
 
 		XMLDocument doc;
-		doc.LoadFile("data.xml");
-		if (!data.set(doc)) {
-			printf("Error to load data! Error: %s\n", getError().c_str());
+		const char* dataPath = "src/data/data.xml";
+		if (doc.LoadFile(dataPath) != XML_SUCCESS) {
+			fprintf(stderr, "Could not load %s: %s\n", dataPath, doc.ErrorStr());
 			_quit = true;
+			return;
+		}
+		if (!data.set(doc)) {
+			fprintf(stderr, "Invalid game configuration in %s\n", dataPath);
+			_quit = true;
+			return;
 		}
 
 		background = loadTexture(renderer, data.backgroundPath);
@@ -146,7 +152,8 @@ namespace myGame {
 	int Game::quit() {
 		delete screen;
 		//Free global font
-		TTF_CloseFont(font);
+		if (font != nullptr)
+			TTF_CloseFont(font);
 		font = NULL;
 		SDL_DestroyTexture(loadingTexture);
 		loadingTexture = NULL;
@@ -160,6 +167,6 @@ namespace myGame {
 		IMG_Quit();
 		SDL_Quit();
 
-		return 0;
+		return _quit ? 1 : 0;
 	}
 }

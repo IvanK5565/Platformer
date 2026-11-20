@@ -1,20 +1,24 @@
 #pragma once
 #include "tinyxml2.h"
-#include "State.h"
 #include <string>
 
 using tinyxml2::XMLElement, tinyxml2::XMLDocument, tinyxml2::XML_SUCCESS;
 using std::string;
 
 namespace myGame {
+	inline bool readRequiredAttribute(const XMLElement& element, const char* name, string& value) {
+		const char* attribute = element.Attribute(name);
+		if (attribute == nullptr || *attribute == '\0') return false;
+		value = attribute;
+		return true;
+	}
+
 	struct TilesData {
 		string type, place;
 		int count, width, height;
 		bool set(XMLElement* e) {
-			type = e->Attribute("type");
-			if (type.empty()) return false;
-			place = e->Attribute("place");
-			if (place.empty()) return false;
+			if (!readRequiredAttribute(*e, "type", type)) return false;
+			if (!readRequiredAttribute(*e, "place", place)) return false;
 			if (e->QueryIntAttribute("count", &count) != XML_SUCCESS) return false;
 			if (e->QueryIntAttribute("width", &width) != XML_SUCCESS) return false;
 			if (e->QueryIntAttribute("height", &height) != XML_SUCCESS) return false;
@@ -25,8 +29,7 @@ namespace myGame {
 		int count;
 		string place;
 		bool set(XMLElement* e) {
-			place = e->Attribute("place");
-			if (place.empty()) return false;
+			if (!readRequiredAttribute(*e, "place", place)) return false;
 			if (e->QueryIntAttribute("count", &count) != XML_SUCCESS) return false;
 			return true;
 		}
@@ -43,8 +46,7 @@ namespace myGame {
 		StateData jump;
 		StateData run;
 		bool set(XMLElement* e) {
-			type = e->Attribute("type");
-			if (type.empty()) return false;
+			if (!readRequiredAttribute(*e, "type", type)) return false;
 			if (e->QueryIntAttribute("width", &width) != XML_SUCCESS) return false;
 			if (e->QueryIntAttribute("height", &height) != XML_SUCCESS) return false;
 			if (e->QueryIntAttribute("hitW", &hitW) != XML_SUCCESS) return false;
@@ -95,13 +97,11 @@ namespace myGame {
 
 			e2 = e->FirstChildElement("play");
 			if (e2 == nullptr) return false;
-			playButPath = e2->Attribute("path");
-			if (playButPath.empty()) return false;
+			if (!readRequiredAttribute(*e2, "path", playButPath)) return false;
 			
 			e2 = e->FirstChildElement("exit");
 			if (e2 == nullptr) return false;
-			exitButPath = e2->Attribute("path");
-			if (exitButPath.empty()) return false;
+			if (!readRequiredAttribute(*e2, "path", exitButPath)) return false;
 
 			return true;
 		}
@@ -113,15 +113,11 @@ namespace myGame {
 		string winPath;
 		string deadPath;
 		bool set(XMLElement* e) {
-			type = e->Attribute("type");
-			if (type.empty()) return false;
-			place = e->Attribute("place");
-			if (place.empty()) return false;
+			if (!readRequiredAttribute(*e, "type", type)) return false;
+			if (!readRequiredAttribute(*e, "place", place)) return false;
 			if (e->QueryIntAttribute("count", &count) != XML_SUCCESS) return false;
-			winPath = e->Attribute("winPath");
-			if (winPath.empty()) return false;
-			deadPath = e->Attribute("deadPath");
-			if (deadPath.empty()) return false;
+			if (!readRequiredAttribute(*e, "winPath", winPath)) return false;
+			if (!readRequiredAttribute(*e, "deadPath", deadPath)) return false;
 			return true;
 		}
 	};
@@ -134,22 +130,23 @@ namespace myGame {
 		string backgroundPath;
 		bool set(XMLDocument& d) {
 			XMLElement* data = d.FirstChildElement("data");
+			if (data == nullptr) return false;
+
 			XMLElement* e;
 			e = data->FirstChildElement("tiles");
-			tiles.set(e);
+			if (e == nullptr || !tiles.set(e)) return false;
 			e = data->FirstChildElement("player");
-			player.set(e);
+			if (e == nullptr || !player.set(e)) return false;
 			e = data->FirstChildElement("bandit1");
-			bandit[0].set(e);
+			if (e == nullptr || !bandit[0].set(e)) return false;
 			e = data->FirstChildElement("bandit2");
-			bandit[1].set(e);
+			if (e == nullptr || !bandit[1].set(e)) return false;
 			e = data->FirstChildElement("menu");
-			menu.set(e);
+			if (e == nullptr || !menu.set(e)) return false;
 			e = data->FirstChildElement("maps");
-			maps.set(e);
+			if (e == nullptr || !maps.set(e)) return false;
 			e = data->FirstChildElement("background");
-			backgroundPath = e->Attribute("path");
-			return true;
+			return e != nullptr && readRequiredAttribute(*e, "path", backgroundPath);
 		}
 	};
 }
