@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{4f5c044f-0aad-4c76-ac0f-f6f9eef4a709}</ProjectGuid>
-    <RootNamespace>SDL2Project2</RootNamespace>
+    <RootNamespace>CoreProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
