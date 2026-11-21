@@ -68,17 +68,14 @@ namespace myGame {
 		//Get rid of old surface
 		SDL_FreeSurface(textSurface);
 
-		XMLDocument doc;
 		const char* dataPath = "src/data/data.xml";
-		if (doc.LoadFile(dataPath) != XML_SUCCESS) {
-			fprintf(stderr, "Could not load %s: %s\n", dataPath, doc.ErrorStr());
-			_quit = true;
-			return;
+		try
+		{
+			data.init(dataPath);
 		}
-		if (!data.set(doc)) {
-			fprintf(stderr, "Invalid game configuration in %s\n", dataPath);
-			_quit = true;
-			return;
+		catch (const std::exception& e)
+		{
+			fprintf(stderr, "%s\n", e.what());
 		}
 
 		background = loadTexture(renderer, data.backgroundPath);

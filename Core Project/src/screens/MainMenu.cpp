@@ -3,7 +3,6 @@
 #include "Game.h"
 #include "../common/TextureLoader.h"
 
-using tinyxml2::XML_NO_ATTRIBUTE;
 namespace myGame {
 	MainMenu::MainMenu(Game* game, Data* data, SDL_Renderer* r)
 		: Screen(game, data, r), play{ 0,0,0,0 }, exit{ 0,0,0,0 } {

@@ -7,9 +7,10 @@
 #include <string>
 #include <vector>
 
+namespace tinyxml2 {
+	class XMLElement;
+}
 namespace fs = std::filesystem;
-
-using std::vector, std::string;
 
 namespace myGame {
 	class Game;
@@ -19,9 +20,9 @@ namespace myGame {
 		int width, height;
 		int** tileNums;
 		int enemyCount;
-		vector<Collide*> walls;
-		vector<SDL_Texture*> tiles;
-		vector<Entity*> enemies;
+		std::vector<Collide*> walls;
+		std::vector<SDL_Texture*> tiles;
+		std::vector<Entity*> enemies;
 		Player* player;
 		Rectangle winZone;
 		SDL_Texture* deathScreen;
@@ -30,7 +31,7 @@ namespace myGame {
 		bool endgame;
 		Uint16 alfa;
 	public:
-		string error;
+		std::string error;
 		bool isError;
 		Map(Game*, Data*, SDL_Renderer*);
 
@@ -40,8 +41,8 @@ namespace myGame {
 		virtual SDL_Rect getRect() override;
 		virtual SDL_Point getFocus() override;
 	private:
-		bool loadTiles(XMLElement*);
-		bool loadObjects(XMLElement*, Data*, SDL_Renderer*);
+		bool loadTiles(tinyxml2::XMLElement*);
+		bool loadObjects(tinyxml2::XMLElement*, Data*, SDL_Renderer*);
 		bool loadTextures(SDL_Renderer*, Data*);
 		bool loadMapData();
 		bool nextLevel();

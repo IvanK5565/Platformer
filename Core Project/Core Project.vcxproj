@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Game.cpp" />
+    <ClCompile Include="src\data\DataV2.cpp" />
     <ClCompile Include="src\entities\Enemy.cpp" />
     <ClCompile Include="src\entities\Entity.cpp" />
     <ClCompile Include="src\entities\Player.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="src\common\TextureLoader.h" />
     <ClInclude Include="src\core\Game.h" />
     <ClInclude Include="src\data\Data.h" />
+    <ClInclude Include="src\data\DataV2.h" />
     <ClInclude Include="src\entities\Enemy.h" />
     <ClInclude Include="src\entities\Entity.h" />
     <ClInclude Include="src\entities\Player.h" />
@@ -174,7 +176,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="src\data\data.xml" />
+    <Xml Include="data.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

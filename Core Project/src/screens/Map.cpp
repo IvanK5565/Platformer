@@ -4,8 +4,12 @@
 #include "TextureLoader.h"
 #include "StringUtils.h"
 #include "Enemy.h"
+#include "tinyxml2.h"
 
-using tinyxml2::XML_NO_ATTRIBUTE;
+namespace {
+	using tinyxml2::XMLElement, tinyxml2::XMLDocument, tinyxml2::XML_NO_ATTRIBUTE;
+}
+
 namespace myGame {
 	Map::Map(Game *game, Data* data, SDL_Renderer* renderer)
 		: Screen(game, data, renderer), player(0), tileNums{ nullptr }, tiles{}, winZone(0,0,0,0), curLvl(1), enemyCount(0), endgame{ false }, alfa{ 0 } {
