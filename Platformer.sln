@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34309.116
+# Visual Studio Version 18
+VisualStudioVersion = 18.12.12405.243 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core Project", "Core Project\Core Project.vcxproj", "{4F5C044F-0AAD-4C76-AC0F-F6F9EEF4A709}"
 EndProject
@@ -29,4 +29,3 @@ Global
 		SolutionGuid = {D0C60504-D7CD-42F5-851F-3D2DEC99728A}
 	EndGlobalSection
 EndGlobal
-
