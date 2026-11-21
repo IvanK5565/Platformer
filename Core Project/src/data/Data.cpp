@@ -117,7 +117,7 @@ namespace {
 }
 
 namespace myGame {
-	void Data::init(const std::string& path) {
+	void Data::loadFrom(const std::string& path) {
 		XMLDocument doc;
 		if (doc.LoadFile(path.c_str()) != XML_SUCCESS) {
 			throw std::runtime_error("Could not load " + path + ": " + doc.ErrorStr());

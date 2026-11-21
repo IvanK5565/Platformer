@@ -68,10 +68,10 @@ namespace myGame {
 		//Get rid of old surface
 		SDL_FreeSurface(textSurface);
 
-		const char* dataPath = "src/data/data.xml";
+		const char* dataPath = "data.xml";
 		try
 		{
-			data.init(dataPath);
+			data.loadFrom(dataPath);
 		}
 		catch (const std::exception& e)
 		{

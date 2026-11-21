@@ -18,7 +18,7 @@
     <ClCompile Include="src\core\Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\data\DataV2.cpp">
+    <ClCompile Include="src\data\Data.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\entities\Enemy.cpp">
@@ -71,9 +71,6 @@
     <ClInclude Include="src\data\Data.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\data\DataV2.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="src\entities\Enemy.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -110,5 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Xml Include="data.xml">
+      <Filter>Файлы ресурсов</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

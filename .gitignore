@@ -361,8 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/SDL2_Project1/SDL2_Project1.vcxproj
-/SDL2_Project1/SDL2_Project1.vcxproj.filters
 
 # Local dev files
 

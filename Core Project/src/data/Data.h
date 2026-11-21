@@ -42,6 +42,6 @@ namespace myGame {
 		MapsData maps;
 		std::string backgroundPath;
 
-		void init(const std::string& path);
+		void loadFrom(const std::string& path);
 	};
 }

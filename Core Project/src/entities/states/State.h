@@ -18,7 +18,7 @@ namespace myGame {
 		Uint32 timer;
 		SDL_RendererFlip flip;
 	public:
-		State(Entity* e, int _w, int _h, StateData* data, string type, SDL_Renderer* r);
+		State(Entity* e, int _w, int _h, StateData* data, std::string type, SDL_Renderer* r);
 		virtual void act(Uint32 delay);
 		virtual void reset();
 		void render(Camera& camera, SDL_Renderer* renderer);
@@ -29,21 +29,21 @@ namespace myGame {
 	//Player States
 	class IdleState : public State {
 	public:
-		IdleState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		IdleState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~IdleState() {}
 	};
 	class RunState : public State {
 	public:
-		RunState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		RunState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~RunState() {}
 	};
 	class JumpState : public State {
 	public:
-		JumpState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		JumpState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~JumpState() {}
@@ -52,7 +52,7 @@ namespace myGame {
 		bool ended;
 		bool cooldown;
 	public:
-		AttackState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		AttackState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer), ended{ false }, cooldown{ false } {}
 		virtual void reset() override;
 		virtual void act(Uint32 delay) override;
@@ -61,7 +61,7 @@ namespace myGame {
 	class HurtState : public State {
 		unsigned int hurtTimer;
 	public:
-		HurtState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		HurtState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer), hurtTimer{ 0 } {}
 		virtual void reset() override;
 		virtual void act(Uint32 delay) override;
@@ -69,7 +69,7 @@ namespace myGame {
 	};
 	class DeathState : public State {
 	public:
-		DeathState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		DeathState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~DeathState() {}
@@ -77,21 +77,21 @@ namespace myGame {
 	//Enemy States
 	class EnemyIdleState : public State {
 	public:
-		EnemyIdleState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		EnemyIdleState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~EnemyIdleState() {}
 	};
 	class EnemyRunState : public State {
 	public:
-		EnemyRunState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		EnemyRunState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~EnemyRunState() {}
 	};
 	class EnemyJumpState : public State {
 	public:
-		EnemyJumpState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		EnemyJumpState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~EnemyJumpState() {}
@@ -100,7 +100,7 @@ namespace myGame {
 		bool ended;
 		bool cooldown;
 	public:
-		EnemyAttackState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		EnemyAttackState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer), ended{ false }, cooldown{ false } {}
 		virtual void reset() override;
 		virtual void act(Uint32 delay) override;
@@ -109,7 +109,7 @@ namespace myGame {
 	class EnemyHurtState : public State {
 		unsigned int hurtTimer;
 	public:
-		EnemyHurtState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		EnemyHurtState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer), hurtTimer{ 0 } {}
 		virtual void reset() override;
 		virtual void act(Uint32 delay) override;
@@ -117,7 +117,7 @@ namespace myGame {
 	};
 	class EnemyDeathState : public State {
 	public:
-		EnemyDeathState(Entity* entity, int _w, int _h, StateData* data, string type, SDL_Renderer* renderer)
+		EnemyDeathState(Entity* entity, int _w, int _h, StateData* data, std::string type, SDL_Renderer* renderer)
 			: State(entity, _w, _h, data, type, renderer) {}
 		virtual void act(Uint32 delay) override;
 		virtual ~EnemyDeathState() {}
